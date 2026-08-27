@@ -1,0 +1,279 @@
+/*
+ * Fuse Design System — CSS Token File
+ * Extracted from fuse-fintech.framer.website
+ * Import this file to get all design tokens as CSS custom properties.
+ * Fonts: Inter (Google Fonts) as the closest free substitute for Google Sans Flex.
+ */
+
+/* === Google Font Import === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap');
+
+:root {
+  /* ========== COLORS ========== */
+
+  /* Primary / Text */
+  --color-primary: #041319;
+  --color-primary-alt: #051219;
+  --color-secondary: #05131a;
+  --color-darkest: #0c0c0c;
+  --color-dark-panel: #0c111d;
+  --color-body: #45474d;
+  --color-muted: #555555;
+  --color-placeholder: #767d82;
+  --color-label: #797c86;
+  --color-tertiary: #9097a0;
+  --color-border-gray: #a1a6a8;
+  --color-card-border: #374248;
+
+  /* Brand / Accent */
+  --color-brand: #1168ea;
+  --color-link: #0177cc;
+  --color-link-alt: #0177cb;
+  --color-link-bright: #0099ff;
+  --color-blue: #2e7aff;
+  --color-blue-alt: #2f7aff;
+  --color-sky: #4ab3ff;
+  --color-cyan: #6af3ff;
+  --color-cyan-light: #b0fdfe;
+  --color-cyan-tint: #d3f9fd;
+  --color-teal: #1ac4d7;
+  --color-teal-deep: #069c9e;
+  --color-teal-light: #60c5d9;
+
+  /* Surfaces */
+  --color-white: #ffffff;
+  --color-near-white: #fdfdfe;
+  --color-off-white: #fafafa;
+  --color-bg-gray: #f7f7f7;
+  --color-surface-gray: #f2f2f2;
+  --color-surface-gray-alt: #f2f3f5;
+  --color-cyan-tint-bg: #f2fbfd;
+  --color-border: #eaeaea;
+  --color-border-alt: #e2e2e2;
+  --color-border-subtle: #e6e7e8;
+  --color-border-card: #eceeee;
+  --color-surface: #eef0f3;
+  --color-divider: #dfdede;
+  --color-dark-border: #262020;
+
+  /* Status */
+  --color-success: #07ba1b;
+  --color-success-dark: #248830;
+  --color-success-deep: #006341;
+  --color-success-bg: #cdffd3;
+  --color-warning: #fb8000;
+  --color-warning-bg: #fbeddf;
+  --color-error: #e01e5a;
+  --color-info: #1168ea;
+
+  /* Light Backgrounds */
+  --color-bg-blue-1: #def1ff;
+  --color-bg-blue-2: #e8f5fd;
+  --color-bg-blue-3: #eefbfd;
+
+  /* Overlays / Alpha */
+  --overlay-05: rgba(0,0,0,0.05);
+  --overlay-06: rgba(0,0,0,0.06);
+  --overlay-08: rgba(0,0,0,0.08);
+  --overlay-10: rgba(0,0,0,0.1);
+  --overlay-12: rgba(0,0,0,0.12);
+  --overlay-14: rgba(0,0,0,0.14);
+  --overlay-16: rgba(0,0,0,0.16);
+  --overlay-92: rgba(0,0,0,0.92);
+  --border-06: rgba(33,34,38,0.06);
+  --glass-22: rgba(255,255,255,0.22);
+  --glass-25: rgba(255,255,255,0.25);
+  --glass-30: rgba(255,255,255,0.3);
+  --glass-40: rgba(255,255,255,0.4);
+  --glass-80: rgba(255,255,255,0.8);
+  --white-alpha-10: #ffffff1a;
+  --white-alpha-70: #ffffffb3;
+  --dark-alpha-92: #000000eb;
+  --dark-alpha-16: #00000029;
+
+  /* Social/Integration */
+  --color-slack-yellow: #ecb22e;
+  --color-slack-blue: #36c5f0;
+  --color-slack-green: #2eb67d;
+  --color-slack-pink: #e01e5a;
+  --color-purple: #975bff;
+  --color-purple-light: #9ea3ff;
+  --color-purple-bg: #ece2ff;
+
+  /* ========== TYPOGRAPHY ========== */
+
+  /* Font Families */
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-label: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Font Variation Settings (approximates Google Sans Flex Variable) */
+  --font-variation-display: "opsz" 18, "wdth" 100, "wght" 450, "GRAD" 0, "ROND" 0, "slnt" 0;
+
+  /* Type Scale — Desktop (≥1200px) */
+  --text-h1: 60px;
+  --text-h2: 48px;
+  --text-h3: 36px;
+  --text-h4: 32px;
+  --text-h5: 20px;
+  --text-h6: 18px;
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+  --text-tiny: 10px;
+  --text-micro: 8px;
+
+  /* Line Heights */
+  --leading-h1: 1.06667em;
+  --leading-heading: 120%;
+  --leading-body: 1.4333em;
+  --leading-tight: 100%;
+  --leading-input: 1.3em;
+  --leading-relaxed: 1.65em;
+  --leading-snug: 1.25em;
+  --leading-1-33: 1.33333em;
+
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* Letter Spacing */
+  --tracking-default: 0em;
+
+  /* ========== SPACING ========== */
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  --space-4xl: 80px;
+  --space-5xl: 100px;
+
+  /* ========== BORDER RADIUS ========== */
+  --radius-none: 0;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 695px;
+  --radius-pill: 999px;
+  --radius-full: 100%;
+
+  /* ========== SHADOWS ========== */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-sm-alt: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-md-alt: 0 4px 8px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
+  --shadow-lg-alt: 0 2.2px 20px rgba(0,0,0,0.1);
+  --shadow-xl: 0 10px 26px rgba(0,0,0,0.08);
+  --shadow-button: 0px 1px 3px 0px rgba(0,0,0,0.12);
+  --shadow-button-hover: 0px 2px 4px rgba(0,0,0,0.06);
+  --shadow-card-premium: 0px 0.602px 1.566px -1.5px rgba(0,0,0,0.17),
+                          0px 2.289px 5.950px -3px rgba(0,0,0,0.14),
+                          0px 10px 26px -4.5px rgba(0,0,0,0.02);
+  --shadow-card-mini: 0px 0.55px 3px 0px rgba(0,0,0,0.12);
+  --shadow-icon: 0px 1px 8px 0px rgba(0,0,0,0.08);
+  --shadow-inset-border: inset 0px 0px 0px 1px rgb(0,0,0);
+
+  /* ========== GRADIENTS ========== */
+  --gradient-hero-fade: linear-gradient(rgba(247,254,255,0) 0%, #ffffff 65%);
+  --gradient-section: linear-gradient(#ffffff 19%, #f2fbfd 100%);
+  --gradient-text-fade: linear-gradient(89deg, #041319 0%, rgba(4,19,26,0) 100%);
+  --gradient-blue: linear-gradient(90deg, rgb(43,167,255) 0%, rgb(136,207,253) 100%);
+
+  /* ========== LAYOUT ========== */
+  --max-width: 1312px;
+  --nav-height: 72px;
+  --section-padding: 80px 30px;
+  --section-padding-tablet: 50px 20px;
+  --section-padding-mobile: 50px 20px;
+  --card-padding: 24px;
+  --input-padding: 14px 14px 13px 14px;
+  --button-padding: 12px 16px;
+  --button-padding-lg: 16px 24px;
+
+  /* ========== TRANSITIONS ========== */
+  --transition-fast: 0.15s ease;
+  --transition-default: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* ========== Z-INDEX ========== */
+  --z-nav: 100;
+  --z-dropdown: 200;
+  --z-modal: 300;
+  --z-tooltip: 400;
+}
+
+/* ========== RESPONSIVE TYPE SCALE OVERRIDES ========== */
+
+/* Tablet (810px – 1199px) */
+@media (max-width: 1199.98px) {
+  :root {
+    --text-h1: 38px;
+    --text-h2: 24px;
+    --text-h3: 20px;
+    --text-h4: 24px;
+    --text-h5: 18px;
+  }
+}
+
+/* Mobile (≤ 809px) */
+@media (max-width: 809.98px) {
+  :root {
+    --text-h1: 32px;
+    --text-h2: 32px;
+    --text-h3: 36px;
+    --text-h4: 20px;
+    --text-h5: 16px;
+    --text-body-lg: 18px;
+    --section-padding: 50px 20px;
+  }
+}
+
+/* ========== BASE STYLES ========== */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  color: var(--color-body);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 { font-size: var(--text-h1); font-weight: var(--weight-regular); line-height: var(--leading-h1); color: var(--color-primary); }
+h2 { font-size: var(--text-h2); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary); }
+h3 { font-size: var(--text-h3); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary-alt); }
+h4 { font-size: var(--text-h4); font-weight: var(--weight-medium); line-height: var(--leading-heading); color: var(--color-primary); }
+h5 { font-size: var(--text-h5); font-weight: var(--weight-semibold); line-height: var(--leading-tight); color: var(--color-primary); }
+h6 { font-size: var(--text-h6); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary); }
+
+p { font-size: var(--text-body-lg); font-weight: var(--weight-regular); line-height: var(--leading-body); color: var(--color-body); }
+
+/* ========== UTILITY CLASSES ========== */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.text-center { text-align: center; }
+.text-start { text-align: start; }
+
+/* Display font variation (for H1, H2, H3, H6 to approximate Google Sans Flex) */
+.font-display {
+  font-family: var(--font-display);
+  font-variation-settings: var(--font-variation-display);
+}

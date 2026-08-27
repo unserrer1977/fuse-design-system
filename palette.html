@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuse Design System — Color Palette</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #f7f7f7; color: #45474d; padding: 40px 20px; }
+h1 { font-size: 32px; font-weight: 400; color: #041319; margin-bottom: 8px; }
+h2 { font-size: 20px; font-weight: 600; color: #041319; margin: 40px 0 16px; }
+p { font-size: 16px; margin-bottom: 24px; }
+.swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+.swatch { border-radius: 12px; overflow: hidden; border: 1px solid rgba(33,34,38,0.06); background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+.swatch-color { height: 80px; }
+.swatch-info { padding: 10px 12px; }
+.swatch-info .name { font-size: 11px; font-weight: 600; color: #041319; margin-bottom: 2px; }
+.swatch-info .hex { font-size: 11px; color: #45474d; font-family: monospace; }
+.section { max-width: 1200px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<div class="section">
+<h1>Fuse Design System — Complete Color Palette</h1>
+<p>All 126 colors extracted from the Fuse Fintech Framer template, organized by category.</p>
+
+<h2>Primary / Text Colors</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:#041319"></div><div class="swatch-info"><div class="name">Primary Dark</div><div class="hex">#041319</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#051219"></div><div class="swatch-info"><div class="name">Primary Alt</div><div class="hex">#051219</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#05131a"></div><div class="swatch-info"><div class="name">Secondary Dark</div><div class="hex">#05131a</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0c0c0c"></div><div class="swatch-info"><div class="name">Darkest</div><div class="hex">#0c0c0c</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0c111d"></div><div class="swatch-info"><div class="name">Dark Panel</div><div class="hex">#0c111d</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#45474d"></div><div class="swatch-info"><div class="name">Body Text</div><div class="hex">#45474d</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#555555"></div><div class="swatch-info"><div class="name">Muted</div><div class="hex">#555</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#767d82"></div><div class="swatch-info"><div class="name">Placeholder</div><div class="hex">#767d82</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#797c86"></div><div class="swatch-info"><div class="name">Label</div><div class="hex">#797c86</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#9097a0"></div><div class="swatch-info"><div class="name">Tertiary</div><div class="hex">#9097a0</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#a1a6a8"></div><div class="swatch-info"><div class="name">Border Gray</div><div class="hex">#a1a6a8</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#374248"></div><div class="swatch-info"><div class="name">Card Border</div><div class="hex">#374248</div></div></div>
+</div>
+
+<h2>Brand / Accent Colors</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:#1168ea"></div><div class="swatch-info"><div class="name">Brand Blue</div><div class="hex">#1168ea</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0177cc"></div><div class="swatch-info"><div class="name">Link Blue</div><div class="hex">#0177cc</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0099ff"></div><div class="swatch-info"><div class="name">Bright Blue</div><div class="hex">#0099ff</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#2e7aff"></div><div class="swatch-info"><div class="name">Blue</div><div class="hex">#2e7aff</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#4ab3ff"></div><div class="swatch-info"><div class="name">Sky Blue</div><div class="hex">#4ab3ff</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#6af3ff"></div><div class="swatch-info"><div class="name">Cyan</div><div class="hex">#6af3ff</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#b0fdfe"></div><div class="swatch-info"><div class="name">Cyan Light</div><div class="hex">#b0fdfe</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#d3f9fd"></div><div class="swatch-info"><div class="name">Cyan Tint</div><div class="hex">#d3f9fd</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#1ac4d7"></div><div class="swatch-info"><div class="name">Teal</div><div class="hex">#1ac4d7</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#069c9e"></div><div class="swatch-info"><div class="name">Teal Deep</div><div class="hex">#069c9e</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#60c5d9"></div><div class="swatch-info"><div class="name">Teal Light</div><div class="hex">#60c5d9</div></div></div>
+</div>
+
+<h2>Surface Colors</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:#ffffff;border:1px solid #eaeaea"></div><div class="swatch-info"><div class="name">White</div><div class="hex">#ffffff</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#fdfdfe"></div><div class="swatch-info"><div class="name">Near White</div><div class="hex">#fdfdfe</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#fafafa"></div><div class="swatch-info"><div class="name">Off White</div><div class="hex">#fafafa</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#f7f7f7"></div><div class="swatch-info"><div class="name">BG Gray</div><div class="hex">#f7f7f7</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#f2f2f2"></div><div class="swatch-info"><div class="name">Surface Gray</div><div class="hex">#f2f2f2</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#f2f3f5"></div><div class="swatch-info"><div class="name">Surface Gray Alt</div><div class="hex">#f2f3f5</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#f2fbfd"></div><div class="swatch-info"><div class="name">Cyan Tint BG</div><div class="hex">#f2fbfd</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#eaeaea"></div><div class="swatch-info"><div class="name">Border</div><div class="hex">#eaeaea</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#e2e2e2"></div><div class="swatch-info"><div class="name">Border Alt</div><div class="hex">#e2e2e2</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#e6e7e8"></div><div class="swatch-info"><div class="name">Border Subtle</div><div class="hex">#e6e7e8</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#eceeee"></div><div class="swatch-info"><div class="name">Border Card</div><div class="hex">#eceeee</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#eef0f3"></div><div class="swatch-info"><div class="name">Surface</div><div class="hex">#eef0f3</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#dfdede"></div><div class="swatch-info"><div class="name">Divider</div><div class="hex">#dfdede</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#def1ff"></div><div class="swatch-info"><div class="name">BG Blue 1</div><div class="hex">#def1ff</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#e8f5fd"></div><div class="swatch-info"><div class="name">BG Blue 2</div><div class="hex">#e8f5fd</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#eefbfd"></div><div class="swatch-info"><div class="name">BG Blue 3</div><div class="hex">#eefbfd</div></div></div>
+</div>
+
+<h2>Status Colors</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:#07ba1b"></div><div class="swatch-info"><div class="name">Success</div><div class="hex">#07ba1b</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#248830"></div><div class="swatch-info"><div class="name">Success Dark</div><div class="hex">#248830</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#006341"></div><div class="swatch-info"><div class="name">Success Deep</div><div class="hex">#006341</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#cdffd3"></div><div class="swatch-info"><div class="name">Success BG</div><div class="hex">#cdffd3</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#fb8000"></div><div class="swatch-info"><div class="name">Warning</div><div class="hex">#fb8000</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#fbeddf"></div><div class="swatch-info"><div class="name">Warning BG</div><div class="hex">#fbeddf</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#e01e5a"></div><div class="swatch-info"><div class="name">Error</div><div class="hex">#e01e5a</div></div></div>
+</div>
+
+<h2>Social / Integration Colors</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:#ecb22e"></div><div class="swatch-info"><div class="name">Slack Yellow</div><div class="hex">#ecb22e</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#36c5f0"></div><div class="swatch-info"><div class="name">Slack Blue</div><div class="hex">#36c5f0</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#2eb67d"></div><div class="swatch-info"><div class="name">Slack Green</div><div class="hex">#2eb67d</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#975bff"></div><div class="swatch-info"><div class="name">Purple</div><div class="hex">#975bff</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#9ea3ff"></div><div class="swatch-info"><div class="name">Purple Light</div><div class="hex">#9ea3ff</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#ece2ff"></div><div class="swatch-info"><div class="name">Purple BG</div><div class="hex">#ece2ff</div></div></div>
+</div>
+
+<h2>Alpha / Overlays</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:rgba(0,0,0,0.05)"></div><div class="swatch-info"><div class="name">Overlay 5%</div><div class="hex">rgba(0,0,0,0.05)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(0,0,0,0.06)"></div><div class="swatch-info"><div class="name">Overlay 6%</div><div class="hex">rgba(0,0,0,0.06)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(0,0,0,0.08)"></div><div class="swatch-info"><div class="name">Overlay 8%</div><div class="hex">rgba(0,0,0,0.08)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(0,0,0,0.1)"></div><div class="swatch-info"><div class="name">Overlay 10%</div><div class="hex">rgba(0,0,0,0.1)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(0,0,0,0.12)"></div><div class="swatch-info"><div class="name">Overlay 12%</div><div class="hex">rgba(0,0,0,0.12)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(0,0,0,0.14)"></div><div class="swatch-info"><div class="name">Overlay 14%</div><div class="hex">rgba(0,0,0,0.14)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(0,0,0,0.16)"></div><div class="swatch-info"><div class="name">Overlay 16%</div><div class="hex">rgba(0,0,0,0.16)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(0,0,0,0.92)"></div><div class="swatch-info"><div class="name">Overlay 92%</div><div class="hex">rgba(0,0,0,0.92)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(255,255,255,0.22)"></div><div class="swatch-info"><div class="name">Glass 22%</div><div class="hex">rgba(255,255,255,0.22)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(255,255,255,0.3)"></div><div class="swatch-info"><div class="name">Glass 30%</div><div class="hex">rgba(255,255,255,0.3)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(255,255,255,0.4)"></div><div class="swatch-info"><div class="name">Glass 40%</div><div class="hex">rgba(255,255,255,0.4)</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:rgba(255,255,255,0.8)"></div><div class="swatch-info"><div class="name">Glass 80%</div><div class="hex">rgba(255,255,255,0.8)</div></div></div>
+</div>
+
+<h2>Gradients</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:linear-gradient(rgba(247,254,255,0) 0%, #fff 65%)"></div><div class="swatch-info"><div class="name">Hero Fade</div><div class="hex">transparent→white</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:linear-gradient(#fff 19%, #f2fbfd 100%)"></div><div class="swatch-info"><div class="name">Section BG</div><div class="hex">white→cyan tint</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:linear-gradient(90deg, rgb(43,167,255) 0%, rgb(136,207,253) 100%)"></div><div class="swatch-info"><div class="name">Blue Gradient</div><div class="hex">#2ba7ff→#88cffd</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:linear-gradient(89deg, #041319 0%, rgba(4,19,26,0) 100%)"></div><div class="swatch-info"><div class="name">Text Fade</div><div class="hex">#041319→transparent</div></div></div>
+</div>
+
+</div>
+</body>
+</html>

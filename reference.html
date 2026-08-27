@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuse Design System — Reference Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Colors */
+  --color-primary: #041319;
+  --color-primary-alt: #051219;
+  --color-secondary: #05131a;
+  --color-darkest: #0c0c0c;
+  --color-dark-panel: #0c111d;
+  --color-body: #45474d;
+  --color-muted: #555;
+  --color-placeholder: #767d82;
+  --color-label: #797c86;
+  --color-tertiary: #9097a0;
+  --color-border-gray: #a1a6a8;
+  --color-card-border: #374248;
+  --color-brand: #1168ea;
+  --color-link: #0177cc;
+  --color-link-bright: #0099ff;
+  --color-blue: #2e7aff;
+  --color-sky: #4ab3ff;
+  --color-cyan: #6af3ff;
+  --color-cyan-light: #b0fdfe;
+  --color-teal: #1ac4d7;
+  --color-teal-deep: #069c9e;
+  --color-white: #ffffff;
+  --color-near-white: #fdfdfe;
+  --color-off-white: #fafafa;
+  --color-bg-gray: #f7f7f7;
+  --color-surface-gray: #f2f2f2;
+  --color-surface-gray-alt: #f2f3f5;
+  --color-cyan-tint-bg: #f2fbfd;
+  --color-border: #eaeaea;
+  --color-border-alt: #e2e2e2;
+  --color-border-subtle: #e6e7e8;
+  --color-border-card: #eceeee;
+  --color-surface: #eef0f3;
+  --color-divider: #dfdede;
+  --color-success: #07ba1b;
+  --color-success-dark: #248830;
+  --color-success-deep: #006341;
+  --color-success-bg: #cdffd3;
+  --color-warning: #fb8000;
+  --color-warning-bg: #fbeddf;
+  --color-error: #e01e5a;
+  --color-info: #1168ea;
+  --color-bg-blue-1: #def1ff;
+  --color-bg-blue-2: #e8f5fd;
+  --color-bg-blue-3: #eefbfd;
+  --overlay-05: rgba(0,0,0,0.05);
+  --overlay-06: rgba(0,0,0,0.06);
+  --overlay-08: rgba(0,0,0,0.08);
+  --overlay-10: rgba(0,0,0,0.1);
+  --overlay-12: rgba(0,0,0,0.12);
+  --overlay-14: rgba(0,0,0,0.14);
+  --overlay-16: rgba(0,0,0,0.16);
+  --overlay-92: rgba(0,0,0,0.92);
+  --border-06: rgba(33,34,38,0.06);
+  --glass-22: rgba(255,255,255,0.22);
+  --glass-30: rgba(255,255,255,0.3);
+  --glass-40: rgba(255,255,255,0.4);
+  --glass-80: rgba(255,255,255,0.8);
+
+  /* Typography */
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+  --font-variation-display: "opsz" 18, "wdth" 100, "wght" 450, "GRAD" 0, "ROND" 0, "slnt" 0;
+
+  /* Type Scale */
+  --text-h1: 60px;
+  --text-h2: 48px;
+  --text-h3: 36px;
+  --text-h4: 32px;
+  --text-h5: 20px;
+  --text-h6: 18px;
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+  --text-tiny: 10px;
+
+  /* Leading */
+  --leading-h1: 1.06667em;
+  --leading-heading: 120%;
+  --leading-body: 1.4333em;
+  --leading-tight: 100%;
+  --leading-input: 1.3em;
+
+  /* Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  --space-4xl: 80px;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
+  --shadow-xl: 0 10px 26px rgba(0,0,0,0.08);
+  --shadow-button: 0px 1px 3px 0px rgba(0,0,0,0.12);
+  --shadow-card-premium: 0px 0.6px 1.57px -1.5px rgba(0,0,0,0.17),
+                         0px 2.29px 5.95px -3px rgba(0,0,0,0.14),
+                         0px 10px 26px -4.5px rgba(0,0,0,0.02);
+
+  /* Gradients */
+  --gradient-hero-fade: linear-gradient(rgba(247,254,255,0) 0%, #fff 65%);
+  --gradient-section: linear-gradient(#fff 19%, #f2fbfd 100%);
+  --gradient-blue: linear-gradient(90deg, rgb(43,167,255) 0%, rgb(136,207,253) 100%);
+
+  /* Layout */
+  --max-width: 1312px;
+  --nav-height: 72px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  color: var(--color-body);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* === Navigation === */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--glass-80);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-06);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo .logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 16px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-family: var(--font-label);
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  color: var(--color-body);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--color-primary); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  line-height: 1.2em;
+  letter-spacing: 0em;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-alt);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.06);
+}
+
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--border-06);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.btn-cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--text-body);
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+}
+
+/* === Eyebrow / Section Label === */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-gray-alt);
+  color: var(--color-body);
+  font-family: var(--font-label);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0em;
+  text-transform: uppercase;
+}
+
+/* === Headings === */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-h1);
+  letter-spacing: 0em;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-heading);
+  letter-spacing: 0em;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-heading);
+  letter-spacing: 0em;
+  color: var(--color-primary-alt);
+  text-align: start;
+}
+
+h4, .h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-heading);
+  letter-spacing: 0em;
+  color: var(--color-primary);
+}
+
+h5, .h5 {
+  font-family: var(--font-label);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: 0em;
+  color: var(--color-primary);
+}
+
+h6, .h6 {
+  font-family: var(--font-display);
+  font-size: var(--text-h6);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-heading);
+  letter-spacing: 0em;
+  color: var(--color-primary);
+}
+
+p, .body-text {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  letter-spacing: 0em;
+  color: var(--color-body);
+}
+
+.text-center { text-align: center; }
+.text-small { font-size: var(--text-small); }
+.text-caption { font-size: var(--text-caption); }
+
+/* === Sections === */
+.section {
+  padding: 80px 30px;
+}
+
+.section-tight {
+  padding: 50px 20px;
+}
+
+.section-gray {
+  background: var(--color-bg-gray);
+}
+
+.section-cyan {
+  background: var(--gradient-section);
+}
+
+.section-dark {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section-dark h1, .section-dark h2, .section-dark h3 { color: var(--color-white); }
+.section-dark p { color: rgba(255,255,255,0.8); }
+
+/* === Hero === */
+.hero {
+  text-align: center;
+  padding: 80px 30px 0;
+  background: linear-gradient(180deg, #fff 0%, #f2fbfd 100%);
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.hero-meta {
+  font-size: var(--text-small);
+  color: var(--color-label);
+  margin-top: 12px;
+}
+
+.hero-screenshot {
+  max-width: 1000px;
+  margin: 48px auto 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card-premium);
+  overflow: hidden;
+  background: var(--color-surface-gray);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-label);
+  font-size: 18px;
+}
+
+/* === Logo Cloud === */
+.logo-cloud {
+  padding: 48px 30px;
+  text-align: center;
+}
+
+.logo-cloud-text {
+  font-size: var(--text-body);
+  color: var(--color-body);
+  margin-bottom: 24px;
+}
+
+.logo-cloud-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-item {
+  height: 32px;
+  background: var(--color-border);
+  border-radius: var(--radius-xs);
+  width: 120px;
+  opacity: 0.6;
+}
+
+/* === Feature Grid === */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.feature-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-06);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-blue-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.feature-card h4 {
+  font-size: var(--text-h6);
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: var(--text-small);
+  color: var(--color-body);
+}
+
+.feature-card .learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  color: var(--color-brand);
+  text-decoration: none;
+}
+
+/* === Showcase === */
+.showcase {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.showcase-image {
+  flex: 1;
+  height: 320px;
+  background: var(--color-cyan-tint-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-label);
+}
+
+.showcase-text {
+  flex: 1;
+}
+
+.showcase-text .eyebrow {
+  margin-bottom: 16px;
+}
+
+.showcase-text h3 {
+  margin-bottom: 16px;
+}
+
+.showcase-text p {
+  margin-bottom: 24px;
+}
+
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--text-body);
+  color: var(--color-body);
+}
+
+.checklist .check {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: var(--color-success-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-success-dark);
+  font-size: 12px;
+}
+
+/* === Stats === */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-heading);
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: var(--text-small);
+  color: var(--color-body);
+}
+
+/* === Cards / Pricing === */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 48px auto 0;
+}
+
+.pricing-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pricing-card.featured {
+  border-color: var(--color-brand);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.pricing-card .featured-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-brand);
+  color: var(--color-white);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+}
+
+.pricing-card h5 {
+  font-size: var(--text-h6);
+}
+
+.pricing-card .price {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-regular);
+  color: var(--color-primary);
+}
+
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pricing-features li {
+  font-size: var(--text-small);
+  color: var(--color-body);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing-features .check {
+  width: 16px;
+  height: 16px;
+  background: var(--color-success-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-success-dark);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+/* === Badges === */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-label);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  background: var(--color-surface-gray-alt);
+  color: var(--color-body);
+}
+
+.badge-blue { background: var(--color-bg-blue-3); color: var(--color-link); }
+.badge-success { background: var(--color-success-bg); color: var(--color-success-deep); }
+.badge-warning { background: var(--color-warning-bg); color: var(--color-warning); }
+.badge-purple { background: #ece2ff; color: #975bff; }
+
+/* === Inputs === */
+.input {
+  background: var(--color-white);
+  border: 1px solid var(--border-06);
+  border-radius: var(--radius-lg);
+  padding: 14px 14px 13px 14px;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  color: var(--color-primary);
+  line-height: var(--leading-input);
+  letter-spacing: 0em;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: var(--color-brand);
+}
+
+.input::placeholder {
+  color: var(--color-placeholder);
+}
+
+/* === Footer === */
+.footer {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 80px 30px 48px;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand h4 {
+  color: var(--color-white);
+  font-size: var(--text-h5);
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: rgba(255,255,255,0.8);
+  font-size: var(--text-small);
+  max-width: 300px;
+}
+
+.footer-col h6 {
+  color: var(--color-white);
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  margin-bottom: 16px;
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.8);
+  font-size: var(--text-small);
+  font-weight: var(--weight-regular);
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: var(--color-white); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: var(--text-small);
+  color: rgba(255,255,255,0.6);
+}
+
+/* === Color Palette Display === */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.swatch {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-06);
+}
+
+.swatch-color {
+  height: 80px;
+}
+
+.swatch-info {
+  padding: 12px;
+  font-size: var(--text-caption);
+}
+
+.swatch-info .name {
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+}
+
+.swatch-info .hex {
+  color: var(--color-body);
+  font-family: monospace;
+}
+
+/* === Responsive === */
+@media (max-width: 1199.98px) {
+  :root {
+    --text-h1: 38px;
+    --text-h2: 24px;
+    --text-h3: 20px;
+    --text-h4: 24px;
+    --text-h5: 18px;
+  }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .showcase { flex-direction: column; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 809.98px) {
+  :root {
+    --text-h1: 32px;
+    --text-h2: 32px;
+    --text-h3: 36px;
+    --text-h4: 20px;
+    --text-h5: 16px;
+    --text-body-lg: 18px;
+  }
+  .nav-links { display: none; }
+  .section { padding: 50px 20px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-screenshot { height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="logo-icon">⏰</span>
+      YourCloud
+    </a>
+    <div class="nav-links">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#integrations" class="nav-link">Integrations</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#security" class="nav-link">Security</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="btn btn-secondary">Sign in</a>
+      <a href="#" class="btn btn-primary">Book a demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>The cloud platform for<br>modern teams</h1>
+    <p>YourCloud brings infrastructure, monitoring, and deployment into one real-time dashboard, helping teams move faster and stay in control.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn btn-primary">Get started free</a>
+      <a href="#" class="btn btn-secondary">Book a demo</a>
+    </div>
+    <p class="hero-meta">No credit card required · Cancel anytime</p>
+    <div class="hero-screenshot">
+      📊 Dashboard Preview
+    </div>
+  </div>
+</section>
+
+<!-- Logo Cloud -->
+<section class="logo-cloud">
+  <div class="container">
+    <p class="logo-cloud-text">25,000+ companies process over $2 billion in cloud spend through YourCloud every month.</p>
+    <div class="logo-cloud-row">
+      <div class="logo-item"></div>
+      <div class="logo-item"></div>
+      <div class="logo-item"></div>
+      <div class="logo-item"></div>
+      <div class="logo-item"></div>
+      <div class="logo-item"></div>
+      <div class="logo-item"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" id="features">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="eyebrow">EVERYTHING YOUR TEAM NEEDS</span>
+      <h2 style="margin-top: 16px;">One platform. Every workflow.</h2>
+      <p style="margin-top: 16px;">One platform for infrastructure, monitoring, deployment, and billing built for modern teams.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <h4>Infrastructure Management</h4>
+        <p>Auto-provision resources across regions. AI optimizes costs before your team even opens the dashboard.</p>
+        <a href="#" class="learn-more">Learn more →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h4>Budget Control</h4>
+        <p>Set spend limits per team, project, or environment. Get real-time alerts before budgets are exceeded.</p>
+        <a href="#" class="learn-more">Learn more →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h4>Deployments</h4>
+        <p>One-click deploys with automatic rollback. AI matches every deploy to the right environment.</p>
+        <a href="#" class="learn-more">Learn more →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h4>Monitoring Sync</h4>
+        <p>One-click sync with Datadog, Grafana, and New Relic. AI codes every metric to the right dashboard.</p>
+        <a href="#" class="learn-more">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Showcase Section -->
+<section class="section section-cyan">
+  <div class="container">
+    <div class="showcase">
+      <div class="showcase-image">
+        📈 Live Dashboard
+      </div>
+      <div class="showcase-text">
+        <span class="eyebrow">REAL-TIME VISIBILITY</span>
+        <h3 style="margin-top: 16px;">See every dollar. The moment it moves.</h3>
+        <p>Most teams spot overspending too late. YourCloud gives you a live view of every transaction across infrastructure, teams, and vendors.</p>
+        <ul class="checklist">
+          <li><span class="check">✓</span> Live transaction feed across all resources and accounts</li>
+          <li><span class="check">✓</span> Spend broken down by team, project, vendor, and category</li>
+          <li><span class="check">✓</span> Instant alerts for unusual or out-of-policy transactions</li>
+          <li><span class="check">✓</span> Export any view as a PDF or CSV in one click</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">5%</div>
+        <div class="stat-label">Average spend reduction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">3hrs</div>
+        <div class="stat-label">Employee time saved</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">99.9%</div>
+        <div class="stat-label">Platform uptime SLA</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">&lt;2wks</div>
+        <div class="stat-label">Average team rollout time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section section-gray" id="pricing">
+  <div class="container">
+    <div style="text-align: center;">
+      <span class="eyebrow">PRICING</span>
+      <h2 style="margin-top: 16px;">Start free. Scale as you grow.</h2>
+      <p style="margin-top: 16px;">Transparent pricing with no hidden fees, built to scale as your team grows.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h5>Starter</h5>
+        <p class="text-small" style="color: var(--color-body);">Built for early-stage teams managing infrastructure and deployments.</p>
+        <div class="price">Free</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 5 members</li>
+          <li><span class="check">✓</span> Virtual resources</li>
+          <li><span class="check">✓</span> Spend tracking</li>
+          <li><span class="check">✓</span> Basic monitoring</li>
+        </ul>
+        <a href="#" class="btn btn-secondary" style="margin-top: 8px;">Get started</a>
+      </div>
+      <div class="pricing-card featured">
+        <span class="featured-badge">Most popular</span>
+        <h5>Growth</h5>
+        <p class="text-small" style="color: var(--color-body);">Designed for scaling companies that need advanced controls.</p>
+        <div class="price">$15/user/month</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited members</li>
+          <li><span class="check">✓</span> AI cost optimization</li>
+          <li><span class="check">✓</span> Advanced budgets</li>
+          <li><span class="check">✓</span> Multi-region sync</li>
+          <li><span class="check">✓</span> 24/7 chat support</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="margin-top: 8px;">Get started</a>
+      </div>
+      <div class="pricing-card">
+        <h5>Enterprise</h5>
+        <p class="text-small" style="color: var(--color-body);">Custom infrastructure, security, and support for large organizations.</p>
+        <div class="price">Custom</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Dedicated manager</li>
+          <li><span class="check">✓</span> Custom workflows</li>
+          <li><span class="check">✓</span> SLA uptime</li>
+          <li><span class="check">✓</span> Custom security</li>
+        </ul>
+        <a href="#" class="btn btn-secondary" style="margin-top: 8px;">Get started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark" style="text-align: center;">
+  <div class="container">
+    <h2>Take full control of cloud spending today</h2>
+    <p style="margin-top: 16px;">Join 25,000+ companies using YourCloud to move faster. Setup takes less than 15 minutes.</p>
+    <div class="hero-actions" style="margin-top: 32px;">
+      <a href="#" class="btn btn-cta">Get started free</a>
+    </div>
+    <p style="color: rgba(255,255,255,0.6); font-size: var(--text-small); margin-top: 12px;">No credit card required · Cancel anytime</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>YourCloud</h4>
+        <p>The complete cloud platform built for fast-moving modern teams and growing global businesses.</p>
+      </div>
+      <div class="footer-col">
+        <h6>Product</h6>
+        <a href="#">Infrastructure</a>
+        <a href="#">Budgets</a>
+        <a href="#">Deployments</a>
+        <a href="#">Monitoring</a>
+        <a href="#">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h6>Company</h6>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Customer stories</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h6>Legal</h6>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 YourCloud, Inc. All rights reserved.</span>
+      <span>SOC 2 Type II · PCI DSS Level 1</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
