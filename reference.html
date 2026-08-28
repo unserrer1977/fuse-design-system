@@ -285,6 +285,13 @@ p, .body-text {
   border-radius: var(--radius-sm); font-size: var(--text-caption); color: var(--color-primary-alt);
   font-weight: var(--weight-medium); text-align: center;
 }
+.feature-card .feature-image {
+  margin-top: 4px; border-radius: var(--radius-md); overflow: hidden;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--border-06);
+}
+.feature-card .feature-image img {
+  width: 100%; display: block; aspect-ratio: 2762/1856; object-fit: cover;
+}
 .feature-checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .feature-checklist li {
   display: flex; align-items: center; gap: 8px; font-size: var(--text-small); color: var(--color-body);
@@ -543,6 +550,7 @@ p, .body-text {
           <li><span class="check">✓</span> Deal room management</li>
           <li><span class="check">✓</span> Investment commitment</li>
         </ul>
+        <div class="feature-image"><img src="/assets/feature-01.png" alt="Deal Management — Thesis-driven screening" loading="lazy" /></div>
       </div>
 
       <!-- 02 / Angel Management -->
@@ -556,6 +564,7 @@ p, .body-text {
           <li><span class="check">✓</span> Angel self-management portal</li>
           <li><span class="check">✓</span> WhatsApp groups for deal and group communications</li>
         </ul>
+        <div class="feature-image"><img src="/assets/feature-02.png" alt="Angel Directory — 128 members" loading="lazy" /></div>
       </div>
 
       <!-- 03 / Marketing & Comms -->
@@ -569,6 +578,7 @@ p, .body-text {
           <li><span class="check">✓</span> Automated event communication</li>
           <li><span class="check">✓</span> Integrated WhatsApp distribution</li>
         </ul>
+        <div class="feature-image"><img src="/assets/deal-pipeline.png" alt="Marketing & Comms — WhatsApp integration" loading="lazy" /></div>
       </div>
 
       <!-- 04 / Event Management -->
