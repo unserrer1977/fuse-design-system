@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentOS — Platform Showcase</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #041319;
+  --color-primary-alt: #051219;
+  --color-secondary: #05131a;
+  --color-darkest: #0c0c0c;
+  --color-dark-panel: #0c111d;
+  --color-body: #45474d;
+  --color-muted: #555;
+  --color-placeholder: #767d82;
+  --color-label: #797c86;
+  --color-tertiary: #9097a0;
+  --color-border-gray: #a1a6a8;
+  --color-card-border: #374248;
+  --color-brand: #1168ea;
+  --color-link: #0177cc;
+  --color-link-bright: #0099ff;
+  --color-blue: #2e7aff;
+  --color-sky: #4ab3ff;
+  --color-cyan: #6af3ff;
+  --color-cyan-light: #b0fdfe;
+  --color-teal: #1ac4d7;
+  --color-teal-deep: #069c9e;
+  --color-white: #ffffff;
+  --color-near-white: #fdfdfe;
+  --color-off-white: #fafafa;
+  --color-bg-gray: #f7f7f7;
+  --color-surface-gray: #f2f2f2;
+  --color-surface-gray-alt: #f2f3f5;
+  --color-cyan-tint-bg: #f2fbfd;
+  --color-border: #eaeaea;
+  --color-border-alt: #e2e2e2;
+  --color-border-subtle: #e6e7e8;
+  --color-border-card: #eceeee;
+  --color-surface: #eef0f3;
+  --color-divider: #dfdede;
+  --color-success: #07ba1b;
+  --color-success-dark: #248830;
+  --color-success-deep: #006341;
+  --color-success-bg: #cdffd3;
+  --color-warning: #fb8000;
+  --color-warning-bg: #fbeddf;
+  --color-error: #e01e5a;
+  --color-info: #1168ea;
+  --color-bg-blue-1: #def1ff;
+  --color-bg-blue-2: #e8f5fd;
+  --color-bg-blue-3: #eefbfd;
+  --overlay-05: rgba(0,0,0,0.05);
+  --overlay-06: rgba(0,0,0,0.06);
+  --overlay-08: rgba(0,0,0,0.08);
+  --overlay-10: rgba(0,0,0,0.1);
+  --overlay-12: rgba(0,0,0,0.12);
+  --overlay-14: rgba(0,0,0,0.14);
+  --overlay-16: rgba(0,0,0,0.16);
+  --overlay-92: rgba(0,0,0,0.92);
+  --border-06: rgba(33,34,38,0.06);
+  --glass-22: rgba(255,255,255,0.22);
+  --glass-30: rgba(255,255,255,0.3);
+  --glass-40: rgba(255,255,255,0.4);
+  --glass-80: rgba(255,255,255,0.8);
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+  --font-variation-display: "opsz" 18, "wdth" 100, "wght" 450, "GRAD" 0, "ROND" 0, "slnt" 0;
+  --text-h1: 60px;
+  --text-h2: 48px;
+  --text-h3: 36px;
+  --text-h4: 32px;
+  --text-h5: 20px;
+  --text-h6: 18px;
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+  --leading-h1: 1.06667em;
+  --leading-heading: 120%;
+  --leading-body: 1.4333em;
+  --leading-tight: 100%;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  --space-4xl: 80px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
+  --shadow-xl: 0 10px 26px rgba(0,0,0,0.08);
+  --shadow-button: 0px 1px 3px 0px rgba(0,0,0,0.12);
+  --shadow-card-premium: 0px 0.6px 1.57px -1.5px rgba(0,0,0,0.17),
+                         0px 2.29px 5.95px -3px rgba(0,0,0,0.14),
+                         0px 10px 26px -4.5px rgba(0,0,0,0.02);
+  --gradient-section: linear-gradient(#fff 19%, #f2fbfd 100%);
+  --gradient-blue: linear-gradient(90deg, rgb(43,167,255) 0%, rgb(136,207,253) 100%);
+  --max-width: 1312px;
+  --nav-height: 72px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  color: var(--color-body);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 30px; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--glass-80); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-06);
+  height: var(--nav-height); display: flex; align-items: center;
+}
+.nav-inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 0 30px; width: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.nav-logo {
+  font-family: var(--font-display); font-size: 20px; font-weight: 700;
+  color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 8px;
+}
+.nav-logo .logo-icon {
+  width: 32px; height: 32px; background: var(--color-primary); border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center; color: var(--color-white); font-size: 14px; font-weight: 700;
+}
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-link {
+  font-family: var(--font-label); font-size: var(--text-small); font-weight: var(--weight-medium);
+  color: var(--color-body); text-decoration: none; transition: color 0.2s;
+}
+.nav-link:hover { color: var(--color-primary); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-label); font-size: var(--text-body); font-weight: var(--weight-medium);
+  line-height: 1.2em; padding: 12px 16px; border-radius: var(--radius-md);
+  border: none; cursor: pointer; transition: all 0.2s ease; text-decoration: none; white-space: nowrap;
+}
+.btn-primary { background: var(--color-primary); color: var(--color-white); box-shadow: var(--shadow-button); }
+.btn-primary:hover { background: var(--color-primary-alt); }
+.btn-secondary { background: var(--color-white); color: var(--color-primary); border: 1px solid var(--border-06); box-shadow: var(--shadow-sm); }
+.btn-cta { background: var(--color-primary); color: var(--color-white); padding: 16px 24px; border-radius: var(--radius-md); }
+
+/* Eyebrow */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 8px;
+  border-radius: var(--radius-pill); background: var(--color-surface-gray-alt);
+  color: var(--color-body); font-family: var(--font-label);
+  font-size: var(--text-caption); font-weight: var(--weight-medium); text-transform: uppercase;
+}
+
+/* Headings */
+h1 { font-family: var(--font-display); font-size: var(--text-h1); font-weight: var(--weight-regular); line-height: var(--leading-h1); color: var(--color-primary); text-align: center; }
+h2 { font-family: var(--font-display); font-size: var(--text-h2); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary); text-align: center; }
+h3 { font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary-alt); }
+h4 { font-family: var(--font-body); font-size: var(--text-h4); font-weight: var(--weight-medium); line-height: var(--leading-heading); color: var(--color-primary); }
+h5 { font-family: var(--font-label); font-size: var(--text-h5); font-weight: var(--weight-semibold); line-height: var(--leading-tight); color: var(--color-primary); }
+h6 { font-family: var(--font-display); font-size: var(--text-h6); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary); }
+p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: var(--weight-regular); line-height: var(--leading-body); color: var(--color-body); }
+
+.section { padding: 80px 30px; }
+.section-gray { background: var(--color-bg-gray); }
+.section-cyan { background: var(--gradient-section); }
+.section-dark { background: var(--color-primary); color: var(--color-white); }
+.section-dark h1, .section-dark h2, .section-dark h3 { color: var(--color-white); }
+.section-dark p { color: rgba(255,255,255,0.8); }
+
+/* Hero */
+.hero { text-align: center; padding: 80px 30px 0; background: linear-gradient(180deg, #fff 0%, #f2fbfd 100%); }
+.hero h1 { margin-bottom: 24px; }
+.hero p { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+.hero-actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 12px; }
+
+/* Hero image — large screenshot */
+.hero-image-wrap {
+  max-width: 1100px; margin: 48px auto 0;
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-card-premium);
+}
+.hero-image-wrap img { width: 100%; display: block; }
+
+/* Trust Bar */
+.trust-bar { padding: 48px 30px; text-align: center; }
+.trust-label { font-size: var(--text-small); color: var(--color-body); margin-bottom: 24px; font-weight: var(--weight-medium); }
+.trust-logos { display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.trust-logo { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--color-body); opacity: 0.5; }
+
+/* Gallery Grid — the core of this design */
+.gallery-header { text-align: center; margin-bottom: 48px; }
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 auto;
+}
+.gallery-item {
+  position: relative; border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-md); border: 1px solid var(--border-06);
+  background: var(--color-white); transition: all 0.3s ease;
+  cursor: pointer;
+}
+.gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.gallery-item img {
+  width: 100%; display: block; aspect-ratio: 2762/1856; object-fit: cover;
+}
+.gallery-item .gallery-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(4,19,25,0.85));
+  padding: 32px 16px 12px; color: #fff;
+  font-size: var(--text-small); font-weight: var(--weight-medium);
+  font-family: var(--font-label);
+}
+
+/* Featured showcase — large alternating image+text */
+.showcase-alt { display: flex; align-items: center; gap: 48px; max-width: 1100px; margin: 0 auto; }
+.showcase-alt:nth-child(even) { flex-direction: row-reverse; }
+.showcase-alt-image {
+  flex: 1; border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-card-premium); border: 1px solid var(--border-06);
+}
+.showcase-alt-image img { width: 100%; display: block; }
+.showcase-alt-text { flex: 1; }
+.showcase-alt-text .eyebrow { margin-bottom: 16px; }
+.showcase-alt-text h3 { margin-bottom: 16px; }
+.showcase-alt-text p { margin-bottom: 24px; }
+
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.checklist li { display: flex; align-items: center; gap: 12px; font-size: var(--text-body); color: var(--color-body); }
+.checklist .check {
+  width: 20px; height: 20px; flex-shrink: 0; background: var(--color-success-bg);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: var(--color-success-dark); font-size: 12px;
+}
+
+/* Stats */
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 800px; margin: 0 auto; }
+.stat-item { text-align: center; }
+.stat-number { font-family: var(--font-display); font-size: var(--text-h1); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary); margin-bottom: 8px; }
+.stat-label { font-size: var(--text-small); color: var(--color-body); }
+
+/* Impact */
+.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 48px auto 0; }
+.impact-card { background: #fff; border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-md); border: 1px solid var(--border-06); display: flex; flex-direction: column; gap: 16px; }
+.impact-card .impact-icon { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--color-bg-blue-3); display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.impact-card h4 { font-size: var(--text-h5); font-weight: var(--weight-semibold); }
+.impact-card p { font-size: var(--text-small); }
+
+/* Testimonials */
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 48px auto 0; }
+.testimonial-card { background: #fff; border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-md); border: 1px solid var(--border-06); display: flex; flex-direction: column; gap: 16px; }
+.testimonial-quote { font-size: var(--text-body); color: var(--color-body); line-height: 1.4333em; }
+.testimonial-attr { display: flex; align-items: center; gap: 12px; }
+.testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-surface-gray-alt); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--color-primary); }
+.testimonial-attr .attr-name { font-family: var(--font-label); font-size: var(--text-small); font-weight: var(--weight-semibold); color: var(--color-primary); }
+.testimonial-attr .attr-role { font-size: var(--text-caption); color: var(--color-body); }
+
+/* Footer */
+.footer { background: var(--color-primary); color: #fff; padding: 80px 30px 48px; }
+.footer-inner { max-width: var(--max-width); margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-brand h4 { color: #fff; font-size: var(--text-h5); margin-bottom: 12px; }
+.footer-brand p { color: rgba(255,255,255,0.8); font-size: var(--text-small); max-width: 320px; }
+.footer-col h6 { color: #fff; font-size: var(--text-small); font-weight: var(--weight-semibold); margin-bottom: 16px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.8); font-size: var(--text-small); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); font-size: var(--text-small); color: rgba(255,255,255,0.6); }
+
+/* Lightbox */
+.lightbox {
+  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(4,19,25,0.92); z-index: 9999; justify-content: center; align-items: center;
+  padding: 40px; cursor: zoom-out;
+}
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 95%; max-height: 90vh; border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.lightbox-close {
+  position: absolute; top: 20px; right: 30px; color: #fff; font-size: 28px;
+  cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
+}
+.lightbox-close:hover { opacity: 1; }
+
+/* Responsive */
+@media (max-width: 1199.98px) {
+  :root { --text-h1: 38px; --text-h2: 24px; --text-h3: 20px; --text-h4: 24px; --text-h5: 18px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .showcase-alt { flex-direction: column !important; }
+  .impact-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .testimonial-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 809.98px) {
+  :root { --text-h1: 32px; --text-h2: 32px; --text-h3: 36px; --text-h4: 20px; --text-h5: 16px; }
+  .nav-links { display: none; }
+  .section { padding: 50px 20px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="logo-icon">A</span>
+      AgentOS
+    </a>
+    <div class="nav-links">
+      <a href="#gallery" class="nav-link">Platform</a>
+      <a href="#impact" class="nav-link">Impact</a>
+      <a href="#customers" class="nav-link">Customers</a>
+      <a href="/" class="nav-link">Main site</a>
+    </div>
+    <div class="nav-actions">
+      <a href="/" class="btn btn-secondary">Talk to a human</a>
+      <a href="/" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div style="margin-bottom: 24px;">
+      <span class="eyebrow">THE OPERATING SYSTEM FOR ANGEL INVESTMENT</span>
+    </div>
+    <h1>See the platform.<br>The whole platform.</h1>
+    <p>Every screen, every workflow, every tool your angel network needs — in one place. Here's what AgentOS actually looks like when you're running deals.</p>
+    <div class="hero-actions">
+      <a href="/" class="btn btn-primary">Get started</a>
+      <a href="/" class="btn btn-secondary">Talk to a human</a>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="/assets/platform-01.png" alt="AgentOS Deal Pipeline — Live" />
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="trust-bar">
+  <div class="container">
+    <p class="trust-label">Trusted by the networks that move fastest</p>
+    <div class="trust-logos">
+      <span class="trust-logo">Thames Valley Angels</span>
+      <span class="trust-logo">Northstar Network</span>
+      <span class="trust-logo">Founders Circle</span>
+      <span class="trust-logo">Meridian Syndicate</span>
+      <span class="trust-logo">Apex Ventures</span>
+    </div>
+  </div>
+</section>
+
+<!-- Platform Gallery — the core of this alternative design -->
+<section class="section section-cyan" id="gallery">
+  <div class="container">
+    <div class="gallery-header">
+      <span class="eyebrow">EVERYTHING YOUR NETWORK RUNS, AUTOMATED</span>
+      <h2 style="margin-top: 16px;">One platform. Every part of your network.</h2>
+      <p style="margin-top: 16px;">From thesis-driven deal screening to automated investor certifications — AgentOS handles the workflow so your group can focus on finding winners.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-01.png')">
+        <img src="/assets/platform-01.png" alt="Deal Pipeline" loading="lazy" />
+        <div class="gallery-label">Deal Pipeline — Live</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-02.png')">
+        <img src="/assets/platform-02.png" alt="Deal Management" loading="lazy" />
+        <div class="gallery-label">Deal Management</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-03.png')">
+        <img src="/assets/platform-03.png" alt="Deal Details" loading="lazy" />
+        <div class="gallery-label">Deal Details</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-04.png')">
+        <img src="/assets/platform-04.png" alt="Angel Management" loading="lazy" />
+        <div class="gallery-label">Angel Management</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-05.png')">
+        <img src="/assets/platform-05.png" alt="Angel Directory" loading="lazy" />
+        <div class="gallery-label">Angel Directory — 128 members</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-06.png')">
+        <img src="/assets/platform-06.png" alt="Deal Room" loading="lazy" />
+        <div class="gallery-label">Deal Room</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-07.png')">
+        <img src="/assets/platform-07.png" alt="Communications" loading="lazy" />
+        <div class="gallery-label">Communications</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-08.png')">
+        <img src="/assets/platform-08.png" alt="WhatsApp Integration" loading="lazy" />
+        <div class="gallery-label">WhatsApp Integration</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-09.png')">
+        <img src="/assets/platform-09.png" alt="Event Management" loading="lazy" />
+        <div class="gallery-label">Event Management</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-10.png')">
+        <img src="/assets/platform-10.png" alt="Events Calendar" loading="lazy" />
+        <div class="gallery-label">Events — 3 scheduled</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-11.png')">
+        <img src="/assets/platform-11.png" alt="Analytics Dashboard" loading="lazy" />
+        <div class="gallery-label">Analytics Dashboard</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-12.png')">
+        <img src="/assets/platform-12.png" alt="Deal Flow Analytics" loading="lazy" />
+        <div class="gallery-label">Deal Flow Analytics — Q3 2026</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-13.png')">
+        <img src="/assets/platform-13.png" alt="Board Reporting" loading="lazy" />
+        <div class="gallery-label">Board Reporting</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-14.png')">
+        <img src="/assets/platform-14.png" alt="Board Pack" loading="lazy" />
+        <div class="gallery-label">Board Pack — Auto-generated</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-15.png')">
+        <img src="/assets/platform-15.png" alt="Compliance" loading="lazy" />
+        <div class="gallery-label">Compliance & Certifications</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-16.png')">
+        <img src="/assets/platform-16.png" alt="Settings" loading="lazy" />
+        <div class="gallery-label">Settings</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-17.png')">
+        <img src="/assets/platform-17.png" alt="Integrations" loading="lazy" />
+        <div class="gallery-label">Integrations</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-18.png')">
+        <img src="/assets/platform-18.png" alt="Dark Mode" loading="lazy" />
+        <div class="gallery-label">Dark Mode</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/platform-19.png')">
+        <img src="/assets/platform-19.png" alt="Mobile View" loading="lazy" />
+        <div class="gallery-label">Mobile View</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Showcase: Deal Management -->
+<section class="section">
+  <div class="container">
+    <div class="showcase-alt">
+      <div class="showcase-alt-image">
+        <img src="/assets/platform-02.png" alt="Deal Management — Thesis-driven screening" />
+      </div>
+      <div class="showcase-alt-text">
+        <span class="eyebrow">01 / DEAL MANAGEMENT</span>
+        <h3 style="margin-top: 16px;">Thesis-driven deals, not gut-driven guessing.</h3>
+        <p>Model your investment thesis once. Let AgentOS automatically screen every incoming deal against it. Run VC-level deep analysis. Manage your funnel, your deal rooms, and investment commitments — all in one place.</p>
+        <ul class="checklist">
+          <li><span class="check">✓</span> Thesis modelling</li>
+          <li><span class="check">✓</span> Automated thesis-based deal screening</li>
+          <li><span class="check">✓</span> VC-level deep deal analysis</li>
+          <li><span class="check">✓</span> Deal funnel management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Showcase: Angel Management -->
+<section class="section section-cyan">
+  <div class="container">
+    <div class="showcase-alt">
+      <div class="showcase-alt-image">
+        <img src="/assets/platform-05.png" alt="Angel Directory — 128 members" />
+      </div>
+      <div class="showcase-alt-text">
+        <span class="eyebrow">02 / ANGEL MANAGEMENT</span>
+        <h3 style="margin-top: 16px;">Your angels, self-managed. Your admin, automated.</h3>
+        <p>Identify and recruit new angels. Automate the admin — including HNW and Sophisticated investor self-certification. Give members a self-management portal. Keep everyone connected with integrated WhatsApp groups for deal flow and group communication.</p>
+        <ul class="checklist">
+          <li><span class="check">✓</span> Angel identification and recruitment</li>
+          <li><span class="check">✓</span> Automated HNW / Sophisticated investor self-certification</li>
+          <li><span class="check">✓</span> Angel self-management portal</li>
+          <li><span class="check">✓</span> WhatsApp groups for deal and group communications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Showcase: Analytics & Board Reporting -->
+<section class="section">
+  <div class="container">
+    <div class="showcase-alt">
+      <div class="showcase-alt-image">
+        <img src="/assets/platform-12.png" alt="Deal Flow Analytics — Q3 2026" />
+      </div>
+      <div class="showcase-alt-text">
+        <span class="eyebrow">05 / ANALYTICS & REPORTING</span>
+        <h3 style="margin-top: 16px;">Board-ready reporting. Zero spreadsheets.</h3>
+        <p>Get highly detailed deal and angel analytics. Track your full deal-flow funnel and metrics. Automatically generate board reports, Invest in Women code reporting, and British Business Bank metrics.</p>
+        <ul class="checklist">
+          <li><span class="check">✓</span> Highly detailed deal and angel analytics</li>
+          <li><span class="check">✓</span> Comprehensive deal-flow funnel and metrics</li>
+          <li><span class="check">✓</span> Automated board reporting</li>
+          <li><span class="check">✓</span> Invest in Women code reporting</li>
+          <li><span class="check">✓</span> British Business Bank metric reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section section-gray">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="eyebrow">REAL IMPACT</span>
+      <h2 style="margin-top: 16px;">Every single week.</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">47</div>
+        <div class="stat-label">Active deals</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">128</div>
+        <div class="stat-label">Angels</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">£8.2M</div>
+        <div class="stat-label">Committed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Impact -->
+<section class="section" id="impact">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="eyebrow">WHAT CHANGES WHEN YOU SWITCH</span>
+      <h2 style="margin-top: 16px;">Real impact, every single week.</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">⏱️</div>
+        <h4>Save hours every week</h4>
+        <p>Get your evenings back. AgentOS automates the admin that was eating your week — from certifications to board packs.</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🚀</div>
+        <h4>Close deals faster</h4>
+        <p>Less friction, more momentum. Deals move through your funnel without getting stuck in someone's inbox.</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🛡️</div>
+        <h4>Stay compliant</h4>
+        <p>Automated, audit-ready, regulation-covered. Investor certifications, BBB metrics, Invest in Women reporting — all generated on schedule.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section section-cyan" id="customers">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="eyebrow">SOCIAL PROOF</span>
+      <h2 style="margin-top: 16px;">The networks using AgentOS aren't just<br>saving time. They're closing more deals.</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"AgentOS gave us back a day a week. Our deal velocity has nearly doubled because nothing falls through the cracks anymore."</p>
+        <div class="testimonial-attr">
+          <div class="testimonial-avatar">SR</div>
+          <div><div class="attr-name">Sarah Redwood</div><div class="attr-role">Network Lead, Thames Valley Angels</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"We went from three spreadsheets, two WhatsApp groups and a shared inbox to one platform. The team finally has time to actually look at deals."</p>
+        <div class="testimonial-attr">
+          <div class="testimonial-avatar">JM</div>
+          <div><div class="attr-name">James Mackenzie</div><div class="attr-role">Operations Manager, Northstar Network</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"The automated reporting alone is worth it. Board packs, Invest in Women, BBB metrics — all generated. I don't touch a spreadsheet for reporting any more."</p>
+        <div class="testimonial-attr">
+          <div class="testimonial-avatar">PH</div>
+          <div><div class="attr-name">Priya Harlow</div><div class="attr-role">Chair, Founders Circle</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section section-dark" style="text-align: center;">
+  <div class="container">
+    <h2>Stop running admin. Start running deals.</h2>
+    <p style="margin-top: 16px;">See AgentOS in action. Talk to a human who actually uses it — or get started right now.</p>
+    <div class="hero-actions" style="margin-top: 32px;">
+      <a href="/" class="btn btn-cta">Get started</a>
+      <a href="/" class="btn" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">Talk to a human</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>AgentOS</h4>
+        <p>The operating system for angel investment. Built by exited founders who run a high-velocity angel group.</p>
+      </div>
+      <div class="footer-col">
+        <h6>Platform</h6>
+        <a href="#">Deal Management</a><a href="#">Angel Management</a><a href="#">Comms</a><a href="#">Events</a><a href="#">Analytics</a><a href="#">Board Reporting</a>
+      </div>
+      <div class="footer-col">
+        <h6>Company</h6>
+        <a href="#">About</a><a href="#">Customers</a><a href="#">Careers</a><a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h6>Get started</h6>
+        <a href="#">Talk to a human</a><a href="#">Book a demo</a><a href="#">Get started</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AgentOS. All rights reserved.</span>
+      <span>Built by angel networks, for angel networks.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>

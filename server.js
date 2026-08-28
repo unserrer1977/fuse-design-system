@@ -21,22 +21,24 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  // Default to reference.html for root
-  let urlPath = req.url === '/' ? '/reference.html' : req.url;
-  
+  // Route: /design -> design.html, / -> reference.html, everything else as-is
+  let urlPath = req.url === '/' ? '/reference.html'
+    : req.url === '/design' || req.url === '/design/' ? '/design.html'
+    : req.url;
+
   // Remove query string
   urlPath = urlPath.split('?')[0];
-  
+
   const filePath = path.join(PUBLIC_DIR, urlPath);
   const ext = path.extname(filePath).toLowerCase();
-  
+
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
       res.end('404 Not Found');
       return;
     }
-    
+
     const mime = MIME_TYPES[ext] || 'application/octet-stream';
     res.writeHead(200, { 'Content-Type': mime });
     res.end(data);
