@@ -280,6 +280,7 @@ p, .body-text {
 }
 .feature-card h4 { font-size: var(--text-h6); margin-bottom: 0; }
 .feature-card p { font-size: var(--text-small); color: var(--color-body); }
+.feature-card .feature-checklist { flex: 1; }
 .feature-card .visual-caption {
   margin-top: 8px; padding: 12px; background: var(--color-cyan-tint-bg);
   border-radius: var(--radius-sm); font-size: var(--text-caption); color: var(--color-primary-alt);
@@ -288,9 +289,10 @@ p, .body-text {
 .feature-card .feature-image {
   margin-top: 4px; border-radius: var(--radius-md); overflow: hidden;
   box-shadow: var(--shadow-sm); border: 1px solid var(--border-06);
+  width: 100%;
 }
 .feature-card .feature-image img {
-  width: 100%; display: block; aspect-ratio: 2762/1856; object-fit: cover;
+  width: 100%; height: 180px; display: block; object-fit: cover; object-position: top;
 }
 .feature-checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .feature-checklist li {
