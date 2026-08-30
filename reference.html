@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AgentOS — The Operating System for Angel Investment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -120,6 +122,13 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-y: none;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-body);
@@ -128,6 +137,21 @@ body {
   color: var(--color-body);
   background: var(--color-white);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* Performance: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 30px; }
@@ -135,9 +159,12 @@ body {
 /* === Navigation === */
 .nav {
   position: sticky; top: 0; z-index: 100;
-  background: var(--glass-80); backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(6px);
+  -webkit-backdrop-filter: saturate(180%) blur(6px);
   border-bottom: 1px solid var(--border-06);
   height: var(--nav-height); display: flex; align-items: center;
+  contain: layout paint;
 }
 .nav-inner {
   max-width: var(--max-width); margin: 0 auto; padding: 0 30px; width: 100%;
@@ -164,7 +191,7 @@ body {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   font-family: var(--font-label); font-size: var(--text-body); font-weight: var(--weight-medium);
   line-height: 1.2em; letter-spacing: 0em; padding: 12px 16px; border-radius: var(--radius-md);
-  border: none; cursor: pointer; transition: all 0.2s ease; text-decoration: none; white-space: nowrap;
+  border: none; cursor: pointer; transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease; text-decoration: none; white-space: nowrap;
 }
 .btn-primary { background: var(--color-primary); color: var(--color-white); box-shadow: var(--shadow-button); }
 .btn-primary:hover { background: var(--color-primary-alt); box-shadow: 0px 2px 4px rgba(0,0,0,0.06); }
@@ -217,7 +244,7 @@ p, .body-text {
 .text-caption { font-size: var(--text-caption); }
 
 /* === Sections === */
-.section { padding: 80px 30px; }
+.section { padding: 80px 30px; content-visibility: auto; contain-intrinsic-size: auto 600px; }
 .section-gray { background: var(--color-bg-gray); }
 .section-cyan { background: var(--gradient-section); }
 .section-dark { background: var(--color-primary); color: var(--color-white); }
@@ -255,10 +282,11 @@ p, .body-text {
   background: var(--color-surface-gray); height: 360px;
   display: flex; align-items: center; justify-content: center;
   color: var(--color-label); font-size: 18px;
+  contain: layout paint style;
 }
 
 /* === Trust Bar === */
-.trust-bar { padding: 48px 30px; text-align: center; }
+.trust-bar { padding: 48px 30px; text-align: center; contain: layout style; }
 .trust-label { font-size: var(--text-small); color: var(--color-body); margin-bottom: 24px; font-weight: var(--weight-medium); }
 .trust-logos { display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap; }
 .trust-logo {
@@ -271,7 +299,9 @@ p, .body-text {
 .feature-card {
   background: var(--color-white); border-radius: var(--radius-lg); padding: 24px;
   box-shadow: var(--shadow-md); border: 1px solid var(--border-06);
-  transition: all 0.3s ease; display: flex; flex-direction: column; gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex; flex-direction: column; gap: 12px;
+  will-change: transform;
 }
 .feature-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .feature-card .step-label {
@@ -392,7 +422,7 @@ p, .body-text {
 .stat-label { font-size: var(--text-small); color: var(--color-body); }
 
 /* === Footer === */
-.footer { background: var(--color-primary); color: var(--color-white); padding: 80px 30px 48px; }
+.footer { background: var(--color-primary); color: var(--color-white); padding: 80px 30px 48px; contain: layout style; }
 .footer-inner { max-width: var(--max-width); margin: 0 auto; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
 .footer-brand h4 { color: var(--color-white); font-size: var(--text-h5); margin-bottom: 12px; }
@@ -479,7 +509,7 @@ p, .body-text {
       </div>
     </div>
     <div class="hero-visual">
-      <img src="/assets/deal-pipeline.png" alt="Deal Pipeline — Live" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);" />
+      <img src="/assets/deal-pipeline.png" alt="Deal Pipeline — Live" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);" loading="eager" fetchpriority="high" />
     </div>
   </div>
 </section>
@@ -552,7 +582,7 @@ p, .body-text {
           <li><span class="check">✓</span> Deal room management</li>
           <li><span class="check">✓</span> Investment commitment</li>
         </ul>
-        <div class="feature-image"><img src="/assets/feature-01.png" alt="Deal Management — Thesis-driven screening" loading="lazy" /></div>
+        <div class="feature-image"><img src="/assets/feature-01.png" alt="Deal Management — Thesis-driven screening" loading="lazy" decoding="async" /></div>
       </div>
 
       <!-- 02 / Angel Management -->
@@ -566,7 +596,7 @@ p, .body-text {
           <li><span class="check">✓</span> Angel self-management portal</li>
           <li><span class="check">✓</span> WhatsApp groups for deal and group communications</li>
         </ul>
-        <div class="feature-image"><img src="/assets/feature-02.png" alt="Angel Directory — 128 members" loading="lazy" /></div>
+        <div class="feature-image"><img src="/assets/feature-02.png" alt="Angel Directory — 128 members" loading="lazy" decoding="async" /></div>
       </div>
 
       <!-- 03 / Marketing & Comms -->
@@ -580,7 +610,7 @@ p, .body-text {
           <li><span class="check">✓</span> Event comms — reminders, follow-ups, all automatic</li>
           <li><span class="check">✓</span> One platform, zero manual newsletters</li>
         </ul>
-        <div class="feature-image"><img src="/assets/feature-04.png" alt="Marketing & Comms — Automated communication" loading="lazy" /></div>
+        <div class="feature-image"><img src="/assets/feature-04.png" alt="Marketing & Comms — Automated communication" loading="lazy" decoding="async" /></div>
       </div>
 
       <!-- 04 / Event Management -->
@@ -594,7 +624,7 @@ p, .body-text {
           <li><span class="check">✓</span> Automated RSVP and reminders</li>
           <li><span class="check">✓</span> Post-event follow-up and analytics</li>
         </ul>
-        <div class="feature-image"><img src="/assets/deal-pipeline.png" alt="Event Management — Upcoming events" loading="lazy" /></div>
+        <div class="feature-image"><img src="/assets/deal-pipeline.png" alt="Event Management — Upcoming events" loading="lazy" decoding="async" /></div>
       </div>
 
       <!-- 05 / Analytics & Reporting -->
@@ -608,7 +638,7 @@ p, .body-text {
           <li><span class="check">✓</span> Automated board reporting & scheduled delivery</li>
           <li><span class="check">✓</span> Invest in Women & British Business Bank reporting</li>
         </ul>
-        <div class="feature-image"><img src="/assets/feature-05.png" alt="Analytics — Deal Flow Analytics" loading="lazy" /></div>
+        <div class="feature-image"><img src="/assets/feature-05.png" alt="Analytics — Deal Flow Analytics" loading="lazy" decoding="async" /></div>
       </div>
 
       <!-- 06 / Agentic AI -->
@@ -622,7 +652,7 @@ p, .body-text {
           <li><span class="check">✓</span> Ranked by past investments & deal relevance</li>
           <li><span class="check">✓</span> Automatic champion recommendations per deal</li>
         </ul>
-        <div class="feature-image"><img src="/assets/feature-06.png" alt="Agentic Angel Deal Assignment — AI recommendations" loading="lazy" /></div>
+        <div class="feature-image"><img src="/assets/feature-06.png" alt="Agentic Angel Deal Assignment — AI recommendations" loading="lazy" decoding="async" /></div>
       </div>
     </div>
   </div>
