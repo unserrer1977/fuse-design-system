@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentOS — Pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #041319;
+  --color-primary-alt: #051219;
+  --color-secondary: #05131a;
+  --color-darkest: #0c0c0c;
+  --color-dark-panel: #0c111d;
+  --color-body: #45474d;
+  --color-muted: #555;
+  --color-placeholder: #767d82;
+  --color-label: #797c86;
+  --color-tertiary: #9097a0;
+  --color-border-gray: #a1a6a8;
+  --color-card-border: #374248;
+  --color-brand: #1168ea;
+  --color-link: #0177cc;
+  --color-link-bright: #0099ff;
+  --color-blue: #2e7aff;
+  --color-sky: #4ab3ff;
+  --color-cyan: #6af3ff;
+  --color-cyan-light: #b0fdfe;
+  --color-cyan-tint: #d3f9fd;
+  --color-teal: #1ac4d7;
+  --color-teal-deep: #069c9e;
+  --color-white: #ffffff;
+  --color-near-white: #fdfdfe;
+  --color-off-white: #fafafa;
+  --color-bg-gray: #f7f7f7;
+  --color-surface-gray: #f2f2f2;
+  --color-surface-gray-alt: #f2f3f5;
+  --color-cyan-tint-bg: #f2fbfd;
+  --color-border: #eaeaea;
+  --color-border-alt: #e2e2e2;
+  --color-border-subtle: #e6e7e8;
+  --color-border-card: #eceeee;
+  --color-surface: #eef0f3;
+  --color-divider: #dfdede;
+  --color-success: #07ba1b;
+  --color-success-dark: #248830;
+  --color-success-deep: #006341;
+  --color-success-bg: #cdffd3;
+  --color-warning: #fb8000;
+  --color-warning-bg: #fbeddf;
+  --color-error: #e01e5a;
+  --color-info: #1168ea;
+  --color-bg-blue-1: #def1ff;
+  --color-bg-blue-2: #e8f5fd;
+  --color-bg-blue-3: #eefbfd;
+  --overlay-05: rgba(0,0,0,0.05);
+  --overlay-06: rgba(0,0,0,0.06);
+  --overlay-08: rgba(0,0,0,0.08);
+  --overlay-10: rgba(0,0,0,0.1);
+  --overlay-12: rgba(0,0,0,0.12);
+  --overlay-14: rgba(0,0,0,0.14);
+  --overlay-16: rgba(0,0,0,0.16);
+  --overlay-92: rgba(0,0,0,0.92);
+  --border-06: rgba(33,34,38,0.06);
+  --glass-80: rgba(255,255,255,0.8);
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+  --font-variation-display: "opsz" 18, "wdth" 100, "wght" 450, "GRAD" 0, "ROND" 0, "slnt" 0;
+  --text-h1: 60px;
+  --text-h2: 48px;
+  --text-h3: 36px;
+  --text-h4: 32px;
+  --text-h5: 20px;
+  --text-h6: 18px;
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+  --leading-h1: 1.06667em;
+  --leading-heading: 120%;
+  --leading-body: 1.4333em;
+  --leading-tight: 100%;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  --space-4xl: 80px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
+  --shadow-button: 0px 1px 3px 0px rgba(0,0,0,0.12);
+  --shadow-card-premium: 0px 0.6px 1.57px -1.5px rgba(0,0,0,0.17),
+                         0px 2.29px 5.95px -3px rgba(0,0,0,0.14),
+                         0px 10px 26px -4.5px rgba(0,0,0,0.02);
+  --gradient-section: linear-gradient(#fff 19%, #f2fbfd 100%);
+  --max-width: 1312px;
+  --nav-height: 72px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-y: none;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  color: var(--color-body);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 30px; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(6px);
+  -webkit-backdrop-filter: saturate(180%) blur(6px);
+  border-bottom: 1px solid var(--border-06);
+  height: var(--nav-height); display: flex; align-items: center;
+  contain: layout paint;
+}
+.nav-inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 0 30px; width: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.nav-logo {
+  font-family: var(--font-display); font-size: 20px; font-weight: 700;
+  color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 8px;
+}
+.nav-logo .logo-icon {
+  width: 32px; height: 32px; background: var(--color-primary); border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center; color: var(--color-white); font-size: 14px; font-weight: 700;
+}
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-link {
+  font-family: var(--font-label); font-size: var(--text-small); font-weight: var(--weight-medium);
+  color: var(--color-body); text-decoration: none; transition: color 0.15s;
+}
+.nav-link:hover { color: var(--color-primary); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-label); font-size: var(--text-body); font-weight: var(--weight-medium);
+  line-height: 1.2em; padding: 12px 16px; border-radius: var(--radius-md);
+  border: none; cursor: pointer; transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  text-decoration: none; white-space: nowrap;
+}
+.btn-primary { background: var(--color-primary); color: var(--color-white); box-shadow: var(--shadow-button); }
+.btn-primary:hover { background: var(--color-primary-alt); }
+.btn-secondary { background: var(--color-white); color: var(--color-primary); border: 1px solid var(--border-06); box-shadow: var(--shadow-sm); }
+.btn-cta { background: var(--color-primary); color: var(--color-white); padding: 16px 24px; border-radius: var(--radius-md); }
+
+/* Eyebrow */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 8px;
+  border-radius: var(--radius-pill); background: var(--color-surface-gray-alt);
+  color: var(--color-body); font-family: var(--font-label);
+  font-size: var(--text-caption); font-weight: var(--weight-medium); text-transform: uppercase;
+}
+
+/* Headings */
+h1 { font-family: var(--font-display); font-size: var(--text-h1); font-weight: var(--weight-regular); line-height: var(--leading-h1); color: var(--color-primary); text-align: center; }
+h2 { font-family: var(--font-display); font-size: var(--text-h2); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary); text-align: center; }
+h3 { font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary-alt); }
+h4 { font-family: var(--font-body); font-size: var(--text-h4); font-weight: var(--weight-medium); line-height: var(--leading-heading); color: var(--color-primary); }
+h5 { font-family: var(--font-label); font-size: var(--text-h5); font-weight: var(--weight-semibold); line-height: var(--leading-tight); color: var(--color-primary); }
+h6 { font-family: var(--font-display); font-size: var(--text-h6); font-weight: var(--weight-regular); line-height: var(--leading-heading); color: var(--color-primary); }
+p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: var(--weight-regular); line-height: var(--leading-body); color: var(--color-body); }
+
+.section { padding: 80px 30px; content-visibility: auto; contain-intrinsic-size: auto 600px; }
+.section-gray { background: var(--color-bg-gray); }
+.section-cyan { background: var(--gradient-section); }
+.section-dark { background: var(--color-primary); color: var(--color-white); }
+.section-dark h1, .section-dark h2, .section-dark h3 { color: var(--color-white); }
+.section-dark p { color: rgba(255,255,255,0.8); }
+
+/* Pricing */
+.pricing-header { text-align: center; margin-bottom: 48px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.pricing-card {
+  background: var(--color-white); border-radius: var(--radius-lg); padding: 32px;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--border-06);
+  display: flex; flex-direction: column; gap: 20px; position: relative;
+}
+.pricing-card.featured { border-color: var(--color-brand); box-shadow: var(--shadow-lg); }
+.pricing-card .featured-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--color-brand); color: var(--color-white);
+  padding: 4px 12px; border-radius: var(--radius-pill);
+  font-size: var(--text-caption); font-weight: var(--weight-medium); white-space: nowrap;
+}
+.pricing-card h5 { font-size: var(--text-h5); }
+.pricing-card .price {
+  font-family: var(--font-display); font-size: var(--text-h4); font-weight: var(--weight-regular); color: var(--color-primary);
+}
+.pricing-card .price-suffix { font-size: var(--text-small); color: var(--color-body); font-weight: var(--weight-regular); }
+.pricing-card .plan-desc { font-size: var(--text-small); color: var(--color-body); }
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.pricing-features li { font-size: var(--text-small); color: var(--color-body); display: flex; align-items: center; gap: 8px; line-height: 1.3em; }
+.pricing-features .check {
+  width: 18px; height: 18px; background: var(--color-success-bg); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: var(--color-success-dark);
+  font-size: 10px; flex-shrink: 0;
+}
+.pricing-card .btn { margin-top: auto; }
+
+/* FAQ */
+.faq-grid { max-width: 800px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 16px; }
+.faq-item {
+  background: var(--color-white); border-radius: var(--radius-lg); padding: 24px;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--border-06);
+}
+.faq-item h5 { font-size: var(--text-body-lg); margin-bottom: 8px; }
+.faq-item p { font-size: var(--text-small); }
+
+/* Stats bar */
+.stats-bar { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.stat-item { text-align: center; }
+.stat-number { font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--weight-regular); color: var(--color-primary); margin-bottom: 4px; }
+.stat-label { font-size: var(--text-small); color: var(--color-body); }
+
+/* Footer */
+.footer { background: var(--color-primary); color: var(--color-white); padding: 80px 30px 48px; contain: layout style; }
+.footer-inner { max-width: var(--max-width); margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-brand h4 { color: var(--color-white); font-size: var(--text-h5); margin-bottom: 12px; }
+.footer-brand p { color: rgba(255,255,255,0.8); font-size: var(--text-small); max-width: 320px; }
+.footer-col h6 { color: var(--color-white); font-size: var(--text-small); font-weight: var(--weight-semibold); margin-bottom: 16px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.8); font-size: var(--text-small); text-decoration: none; margin-bottom: 8px; transition: color 0.15s; }
+.footer-col a:hover { color: var(--color-white); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); font-size: var(--text-small); color: rgba(255,255,255,0.6); }
+
+/* Responsive */
+@media (max-width: 1199.98px) {
+  :root { --text-h1: 38px; --text-h2: 24px; --text-h3: 20px; --text-h4: 24px; --text-h5: 18px; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 809.98px) {
+  :root { --text-h1: 32px; --text-h2: 32px; --text-h3: 36px; --text-h4: 20px; --text-h5: 16px; }
+  .nav-links { display: none; }
+  .section { padding: 50px 20px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .stats-bar { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="logo-icon">A</span>
+      AgentOS
+    </a>
+    <div class="nav-links">
+      <a href="/#platform" class="nav-link">Platform</a>
+      <a href="/#customers" class="nav-link">Customers</a>
+      <a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/#about" class="nav-link">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="/" class="btn btn-secondary">Talk to a human</a>
+      <a href="/" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Pricing -->
+<section class="section section-cyan">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="eyebrow">PRICING</span>
+      <h2 style="margin-top: 16px;">Start free. Scale as you grow.</h2>
+      <p style="margin-top: 16px;">Transparent pricing with no hidden fees or per-deal charges. Built to scale as your network grows.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="pricing-card">
+        <h5>Starter</h5>
+        <p class="plan-desc">Built for early-stage angel networks getting started with deal flow and member management.</p>
+        <div class="price">Free</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Up to 5 members</li>
+          <li><span class="check">✓</span> Deal pipeline & basic screening</li>
+          <li><span class="check">✓</span> Angel directory</li>
+          <li><span class="check">✓</span> Manual deal communication</li>
+          <li><span class="check">✓</span> Basic analytics dashboard</li>
+        </ul>
+        <a href="/" class="btn btn-secondary">Get started</a>
+      </div>
+
+      <!-- Growth (Featured) -->
+      <div class="pricing-card featured">
+        <span class="featured-badge">Most popular</span>
+        <h5>Growth</h5>
+        <p class="plan-desc">Designed for scaling angel networks that need automated workflows, agentic AI, and deeper analytics.</p>
+        <div class="price">£29<span class="price-suffix"> /member/month</span></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited members</li>
+          <li><span class="check">✓</span> Automated deal screening & thesis modelling</li>
+          <li><span class="check">✓</span> Agentic AI angel deal assignment</li>
+          <li><span class="check">✓</span> Automated HNW / Sophisticated investor certification</li>
+          <li><span class="check">✓</span> Automated comms & WhatsApp distribution</li>
+          <li><span class="check">✓</span> Event management with automated RSVP</li>
+          <li><span class="check">✓</span> Board reporting & Invest in Women metrics</li>
+          <li><span class="check">✓</span> British Business Bank metric reporting</li>
+          <li><span class="check">✓</span> Priority support</li>
+        </ul>
+        <a href="/" class="btn btn-primary">Get started</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="pricing-card">
+        <h5>Enterprise</h5>
+        <p class="plan-desc">Custom infrastructure, security, and support for large angel networks and syndicates operating at scale.</p>
+        <div class="price">Custom</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Growth, plus:</li>
+          <li><span class="check">✓</span> Dedicated account manager</li>
+          <li><span class="check">✓</span> Custom workflows & integrations</li>
+          <li><span class="check">✓</span> Multi-network / multi-entity support</li>
+          <li><span class="check">✓</span> SLA uptime guarantee</li>
+          <li><span class="check">✓</span> Custom security & compliance</li>
+          <li><span class="check">✓</span> Onboarding & training included</li>
+          <li><span class="check">✓</span> 24/7 dedicated support</li>
+        </ul>
+        <a href="/" class="btn btn-secondary">Get started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="section" style="padding-top: 48px;">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-number">10hrs+</div>
+        <div class="stat-label">Saved per week</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">47</div>
+        <div class="stat-label">Active deals managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">128</div>
+        <div class="stat-label">Angels onboarded</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">£8.2M</div>
+        <div class="stat-label">Committed through AgentOS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-gray">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="eyebrow">FAQ</span>
+      <h2 style="margin-top: 16px;">Questions, answered.</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h5>How long does it take to get set up?</h5>
+        <p>Most angel networks are fully set up within two weeks. Some go live in a day. AgentOS handles the heavy lifting — connect your existing tools, set your investment thesis, and invite your angels.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Do I need to migrate my existing data?</h5>
+        <p>No migration required. AgentOS connects to your existing stack in minutes — no disruption, no downtime. Just a platform that fits how you already work.</p>
+      </div>
+      <div class="faq-item">
+        <h5>What's included in the agentic AI?</h5>
+        <p>AgentOS's agentic AI automatically identifies the best angels in your network to champion a particular deal — based on their expertise, experience, and past investments. It also reads and categorizes incoming deals, screens them against your thesis, and flags anomalies.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Can I cancel anytime?</h5>
+        <p>Yes. No contracts, no lock-in. Cancel anytime. The Starter plan is free forever — upgrade only when you're ready.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Is my data secure?</h5>
+        <p>All data is encrypted both in transit and at rest using enterprise-grade AES-256 standards. Investor certifications, deal data, and member information are protected with role-based access controls and granular permissions.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Do you support Invest in Women and BBB reporting?</h5>
+        <p>Yes — on the Growth and Enterprise plans. AgentOS automatically generates Invest in Women code reporting and British Business Bank metrics as part of your board pack. No spreadsheets required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section section-dark" style="text-align: center;">
+  <div class="container">
+    <h2>Stop running admin. Start running deals.</h2>
+    <p style="margin-top: 16px;">Join angel networks using AgentOS to move faster. Setup takes less than 15 minutes.</p>
+    <div style="display: flex; gap: 12px; justify-content: center; margin-top: 32px;">
+      <a href="/" class="btn btn-cta">Get started free</a>
+      <a href="/" class="btn" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">Talk to a human</a>
+    </div>
+    <p style="color: rgba(255,255,255,0.6); font-size: var(--text-small); margin-top: 12px;">No credit card required · Cancel anytime</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>AgentOS</h4>
+        <p>The operating system for angel investment. Built by exited founders who run a high-velocity angel group.</p>
+      </div>
+      <div class="footer-col">
+        <h6>Platform</h6>
+        <a href="/#platform">Deal Management</a>
+        <a href="/#platform">Angel Management</a>
+        <a href="/#platform">Comms</a>
+        <a href="/#platform">Events</a>
+        <a href="/#platform">Analytics</a>
+        <a href="/#platform">Agentic AI</a>
+        <a href="/#platform">Board Reporting</a>
+      </div>
+      <div class="footer-col">
+        <h6>Company</h6>
+        <a href="/#about">About</a>
+        <a href="/#customers">Customers</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h6>Get started</h6>
+        <a href="/">Talk to a human</a>
+        <a href="/">Book a demo</a>
+        <a href="/">Get started</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AgentOS. All rights reserved.</span>
+      <span>Built by angel networks, for angel networks.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

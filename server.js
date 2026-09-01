@@ -21,9 +21,10 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  // Route: /design -> design.html, / -> reference.html, everything else as-is
+  // Route: /design -> design.html, /pricing -> pricing.html, / -> reference.html
   let urlPath = req.url === '/' ? '/reference.html'
     : req.url === '/design' || req.url === '/design/' ? '/design.html'
+    : req.url === '/pricing' || req.url === '/pricing/' ? '/pricing.html'
     : req.url;
 
   // Remove query string
