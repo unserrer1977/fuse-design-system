@@ -215,8 +215,30 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
 .section-dark p { color: rgba(255,255,255,0.8); }
 
 /* Pricing */
-.pricing-header { text-align: center; margin-bottom: 48px; }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.pricing-header { text-align: center; margin-bottom: 40px; }
+
+/* Billing toggle */
+.billing-toggle {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 24px;
+  background: var(--color-surface-gray-alt); border-radius: var(--radius-pill);
+  padding: 4px;
+}
+.billing-toggle button {
+  border: none; background: transparent; cursor: pointer;
+  font-family: var(--font-label); font-size: var(--text-small); font-weight: var(--weight-medium);
+  color: var(--color-body); padding: 8px 20px; border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+.billing-toggle button.active {
+  background: var(--color-primary); color: var(--color-white);
+}
+.billing-toggle .save-badge {
+  background: var(--color-success-bg); color: var(--color-success-deep);
+  font-size: var(--text-caption); font-weight: var(--weight-semibold);
+  padding: 3px 10px; border-radius: var(--radius-pill); margin-left: 4px;
+}
+
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
 .pricing-card {
   background: var(--color-white); border-radius: var(--radius-lg); padding: 32px;
   box-shadow: var(--shadow-sm); border: 1px solid var(--border-06);
@@ -229,35 +251,32 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
   padding: 4px 12px; border-radius: var(--radius-pill);
   font-size: var(--text-caption); font-weight: var(--weight-medium); white-space: nowrap;
 }
-.pricing-card h5 { font-size: var(--text-h5); }
+.pricing-card h5 { font-size: 24px; }
+.pricing-card .plan-desc { font-size: var(--text-small); color: var(--color-body); }
 .pricing-card .price {
-  font-family: var(--font-display); font-size: var(--text-h4); font-weight: var(--weight-regular); color: var(--color-primary);
+  font-family: var(--font-display); font-size: 40px; font-weight: var(--weight-regular); color: var(--color-primary); line-height: 1.1em;
 }
 .pricing-card .price-suffix { font-size: var(--text-small); color: var(--color-body); font-weight: var(--weight-regular); }
-.pricing-card .plan-desc { font-size: var(--text-small); color: var(--color-body); }
-.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
-.pricing-features li { font-size: var(--text-small); color: var(--color-body); display: flex; align-items: center; gap: 8px; line-height: 1.3em; }
+.pricing-card .price-yearly { font-size: var(--text-caption); color: var(--color-label); margin-top: 4px; }
+
+/* Hours badge */
+.hours-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--color-cyan-tint-bg); border-radius: var(--radius-md);
+  padding: 10px 14px;
+}
+.hours-badge .hours-label { font-size: var(--text-caption); color: var(--color-label); text-transform: uppercase; letter-spacing: 0.05em; font-weight: var(--weight-medium); }
+.hours-badge .hours-value { font-family: var(--font-display); font-size: var(--text-body); font-weight: var(--weight-semibold); color: var(--color-primary); }
+
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.pricing-features li { font-size: var(--text-small); color: var(--color-body); display: flex; align-items: flex-start; gap: 8px; line-height: 1.3em; }
 .pricing-features .check {
   width: 18px; height: 18px; background: var(--color-success-bg); border-radius: 50%;
   display: flex; align-items: center; justify-content: center; color: var(--color-success-dark);
-  font-size: 10px; flex-shrink: 0;
+  font-size: 10px; flex-shrink: 0; margin-top: 1px;
 }
+.pricing-features .section-label { font-size: var(--text-caption); color: var(--color-primary); font-weight: var(--weight-semibold); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
 .pricing-card .btn { margin-top: auto; }
-
-/* FAQ */
-.faq-grid { max-width: 800px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 16px; }
-.faq-item {
-  background: var(--color-white); border-radius: var(--radius-lg); padding: 24px;
-  box-shadow: var(--shadow-sm); border: 1px solid var(--border-06);
-}
-.faq-item h5 { font-size: var(--text-body-lg); margin-bottom: 8px; }
-.faq-item p { font-size: var(--text-small); }
-
-/* Stats bar */
-.stats-bar { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
-.stat-item { text-align: center; }
-.stat-number { font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--weight-regular); color: var(--color-primary); margin-bottom: 4px; }
-.stat-label { font-size: var(--text-small); color: var(--color-body); }
 
 /* Footer */
 .footer { background: var(--color-primary); color: var(--color-white); padding: 80px 30px 48px; contain: layout style; }
@@ -281,7 +300,6 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
   .nav-links { display: none; }
   .section { padding: 50px 20px; }
   .footer-top { grid-template-columns: 1fr; }
-  .stats-bar { gap: 24px; }
 }
 </style>
 </head>
@@ -313,20 +331,32 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
     <div class="pricing-header">
       <span class="eyebrow">PRICING</span>
       <h2 style="margin-top: 16px;">Start free. Scale as you grow.</h2>
-      <p style="margin-top: 16px;">Transparent pricing with no hidden fees or per-deal charges. Built to scale as your network grows.</p>
+      <p style="margin-top: 16px;">Transparent pricing with no hidden fees. Built to scale as your network grows.</p>
+      <div class="billing-toggle" id="billingToggle">
+        <button class="active" onclick="setBilling('monthly')">Monthly</button>
+        <button onclick="setBilling('yearly')">Yearly <span class="save-badge">Save 20%</span></button>
+      </div>
     </div>
     <div class="pricing-grid">
       <!-- Starter -->
       <div class="pricing-card">
         <h5>Starter</h5>
-        <p class="plan-desc">Built for early-stage angel networks getting started with deal flow and member management.</p>
-        <div class="price">Free</div>
+        <p class="plan-desc">Everything you need to run your angel group.</p>
+        <div class="price">£95<span class="price-suffix"> /month</span></div>
+        <div class="price-yearly" data-yearly="£76/month billed annually" data-monthly="&nbsp;"></div>
+        <div class="hours-badge">
+          <span class="hours-label">Hours per week saved</span>
+          <span class="hours-value">12 hours</span>
+        </div>
         <ul class="pricing-features">
-          <li><span class="check">✓</span> Up to 5 members</li>
-          <li><span class="check">✓</span> Deal pipeline & basic screening</li>
-          <li><span class="check">✓</span> Angel directory</li>
-          <li><span class="check">✓</span> Manual deal communication</li>
-          <li><span class="check">✓</span> Basic analytics dashboard</li>
+          <li class="section-label">Starter includes:</li>
+          <li><span class="check">✓</span> Customisable deal pipeline</li>
+          <li><span class="check">✓</span> Deal and angel CRM</li>
+          <li><span class="check">✓</span> Deal champion allocation</li>
+          <li><span class="check">✓</span> Investment commit indication</li>
+          <li><span class="check">✓</span> Basic statistics module</li>
+          <li><span class="check">✓</span> Funding and new angel application forms</li>
+          <li><span class="check">✓</span> Virtual and face-to-face pitch event management</li>
         </ul>
         <a href="/" class="btn btn-secondary">Get started</a>
       </div>
@@ -335,17 +365,20 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
       <div class="pricing-card featured">
         <span class="featured-badge">Most popular</span>
         <h5>Pro</h5>
-        <p class="plan-desc">Designed for scaling angel networks that need automated workflows and deeper visibility.</p>
-        <div class="price">£29<span class="price-suffix"> /member/month</span></div>
+        <p class="plan-desc">For groups ready to scale operations.</p>
+        <div class="price">£199<span class="price-suffix"> /month</span></div>
+        <div class="price-yearly" data-yearly="£159/month billed annually" data-monthly="&nbsp;"></div>
+        <div class="hours-badge">
+          <span class="hours-label">Hours per week saved</span>
+          <span class="hours-value">30 hours</span>
+        </div>
         <ul class="pricing-features">
-          <li><span class="check">✓</span> Unlimited members</li>
-          <li><span class="check">✓</span> Automated deal screening & thesis modelling</li>
-          <li><span class="check">✓</span> Agentic AI angel deal assignment</li>
-          <li><span class="check">✓</span> Automated HNW / Sophisticated investor certification</li>
-          <li><span class="check">✓</span> Automated comms & WhatsApp distribution</li>
-          <li><span class="check">✓</span> Virtual and face-to-face pitch event management</li>
-          <li><span class="check">✓</span> British Business Bank metric reporting</li>
-          <li><span class="check">✓</span> Priority support</li>
+          <li class="section-label">Everything in Starter, plus:</li>
+          <li><span class="check">✓</span> Detailed and customisable stats module</li>
+          <li><span class="check">✓</span> Task management</li>
+          <li><span class="check">✓</span> Event management</li>
+          <li><span class="check">✓</span> Angel and Deal live feeds for website integration</li>
+          <li><span class="check">✓</span> Automatic event lookbook creation <em>(coming soon)</em></li>
         </ul>
         <a href="/" class="btn btn-primary">Get started</a>
       </div>
@@ -353,79 +386,20 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
       <!-- Ninja -->
       <div class="pricing-card">
         <h5>Ninja</h5>
-        <p class="plan-desc">Everything in Pro, plus advanced analytics, automated reporting, and full compliance coverage.</p>
-        <div class="price">£79<span class="price-suffix"> /member/month</span></div>
+        <p class="plan-desc">Maximum automation with AI-powered screening.</p>
+        <div class="price">£269<span class="price-suffix"> /month</span></div>
+        <div class="price-yearly" data-yearly="£215/month billed annually" data-monthly="&nbsp;"></div>
+        <div class="hours-badge">
+          <span class="hours-label">Hours per week saved</span>
+          <span class="hours-value">50 hours</span>
+        </div>
         <ul class="pricing-features">
-          <li><span class="check">✓</span> Everything in Pro, plus:</li>
-          <li><span class="check">✓</span> Detailed and customisable stats module</li>
-          <li><span class="check">✓</span> Automated newsletter generation</li>
-          <li><span class="check">✓</span> Women in Code reporting</li>
-          <li><span class="check">✓</span> Board reporting & Invest in Women metrics</li>
-          <li><span class="check">✓</span> Dedicated account manager</li>
-          <li><span class="check">✓</span> Custom workflows & integrations</li>
-          <li><span class="check">✓</span> 24/7 dedicated support</li>
+          <li class="section-label">Everything in Starter and Pro, plus:</li>
+          <li><span class="check">✓</span> Deal voice AI screening</li>
+          <li><span class="check">✓</span> Data room management</li>
+          <li><span class="check">✓</span> Automated WhatsApp deal groups</li>
         </ul>
-        <a href="/" class="btn btn-secondary">Get started</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stats Bar -->
-<section class="section" style="padding-top: 48px;">
-  <div class="container">
-    <div class="stats-bar">
-      <div class="stat-item">
-        <div class="stat-number">10hrs+</div>
-        <div class="stat-label">Saved per week</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">47</div>
-        <div class="stat-label">Active deals managed</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">128</div>
-        <div class="stat-label">Angels onboarded</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">£8.2M</div>
-        <div class="stat-label">Committed through AgentOS</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section section-gray">
-  <div class="container">
-    <div style="text-align: center; margin-bottom: 48px;">
-      <span class="eyebrow">FAQ</span>
-      <h2 style="margin-top: 16px;">Questions, answered.</h2>
-    </div>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h5>How long does it take to get set up?</h5>
-        <p>Most angel networks are fully set up within two weeks. Some go live in a day. AgentOS handles the heavy lifting — connect your existing tools, set your investment thesis, and invite your angels.</p>
-      </div>
-      <div class="faq-item">
-        <h5>Do I need to migrate my existing data?</h5>
-        <p>No migration required. AgentOS connects to your existing stack in minutes — no disruption, no downtime. Just a platform that fits how you already work.</p>
-      </div>
-      <div class="faq-item">
-        <h5>What's included in the agentic AI?</h5>
-        <p>AgentOS's agentic AI automatically identifies the best angels in your network to champion a particular deal — based on their expertise, experience, and past investments. It also reads and categorizes incoming deals, screens them against your thesis, and flags anomalies.</p>
-      </div>
-      <div class="faq-item">
-        <h5>Can I cancel anytime?</h5>
-        <p>Yes. No contracts, no lock-in. Cancel anytime. The Starter plan is free forever — upgrade only when you're ready.</p>
-      </div>
-      <div class="faq-item">
-        <h5>Is my data secure?</h5>
-        <p>All data is encrypted both in transit and at rest using enterprise-grade AES-256 standards. Investor certifications, deal data, and member information are protected with role-based access controls and granular permissions.</p>
-      </div>
-      <div class="faq-item">
-        <h5>Do you support Invest in Women and BBB reporting?</h5>
-        <p>Yes — on the Ninja plan. AgentOS automatically generates Invest in Women code reporting, Women in Code reporting, and British Business Bank metrics as part of your board pack. No spreadsheets required.</p>
+        <a href="/" class="btn btn-secondary">Contact sales</a>
       </div>
     </div>
   </div>
@@ -437,7 +411,7 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
     <h2>Stop running admin. Start running deals.</h2>
     <p style="margin-top: 16px;">Join angel networks using AgentOS to move faster. Setup takes less than 15 minutes.</p>
     <div style="display: flex; gap: 12px; justify-content: center; margin-top: 32px;">
-      <a href="/" class="btn btn-cta">Get started free</a>
+      <a href="/" class="btn btn-cta">Get started</a>
       <a href="/" class="btn" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">Talk to a human</a>
     </div>
     <p style="color: rgba(255,255,255,0.6); font-size: var(--text-small); margin-top: 12px;">No credit card required · Cancel anytime</p>
@@ -460,7 +434,6 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
         <a href="/#platform">Events</a>
         <a href="/#platform">Analytics</a>
         <a href="/#platform">Agentic AI</a>
-        <a href="/#platform">Board Reporting</a>
       </div>
       <div class="footer-col">
         <h6>Company</h6>
@@ -483,6 +456,55 @@ p { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: 
     </div>
   </div>
 </footer>
+
+<script>
+function setBilling(mode) {
+  // Update toggle buttons
+  document.querySelectorAll('#billingToggle button').forEach(b => b.classList.remove('active'));
+  event.target.closest('button').classList.addactive || event.target.classList.add('active');
+  
+  // Update prices
+  const prices = {
+    starter: { monthly: 95, yearly: 76 },
+    pro: { monthly: 199, yearly: 159 },
+    ninja: { monthly: 269, yearly: 215 }
+  };
+  
+  const suffix = mode === 'yearly' ? '/month billed annually' : '/month';
+  
+  document.querySelectorAll('.pricing-card').forEach((card, i) => {
+    const key = ['starter', 'pro', 'ninja'][i];
+    const priceEl = card.querySelector('.price');
+    const amount = mode === 'yearly' ? prices[key].yearly : prices[key].monthly;
+    priceEl.innerHTML = '£' + amount + '<span class="price-suffix"> ' + suffix + '</span>';
+  });
+}
+
+// Fix toggle active state
+document.querySelectorAll('#billingToggle button').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('#billingToggle button').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const mode = this.textContent.includes('Yearly') ? 'yearly' : 'monthly';
+    setBillingMode(mode);
+  });
+});
+
+function setBillingMode(mode) {
+  const prices = {
+    starter: { monthly: 95, yearly: 76 },
+    pro: { monthly: 199, yearly: 159 },
+    ninja: { monthly: 269, yearly: 215 }
+  };
+  const suffix = mode === 'yearly' ? '/month billed annually' : '/month';
+  document.querySelectorAll('.pricing-card').forEach((card, i) => {
+    const key = ['starter', 'pro', 'ninja'][i];
+    const priceEl = card.querySelector('.price');
+    const amount = mode === 'yearly' ? prices[key].yearly : prices[key].monthly;
+    priceEl.innerHTML = '£' + amount + '<span class="price-suffix"> ' + suffix + '</span>';
+  });
+}
+</script>
 
 </body>
 </html>
